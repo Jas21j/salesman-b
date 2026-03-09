@@ -55,19 +55,21 @@ async function fetchFromGNews(limit: number): Promise<NewsArticle[]> {
 }
 
 /**
- * Fetch news articles. Primary: TheNewsAPI. Fallback: GNews.
+ * Fetch news articles. Always queries both sources and merges for best coverage.
  * Returns empty array on total failure (caller handles static fallback).
  */
 export async function fetchNewsArticles(limit: number = 6): Promise<NewsArticle[]> {
   try {
-    const primary = await fetchFromTheNewsAPI(limit)
-    if (primary.length >= Math.floor(limit / 2)) {
-      return filterAndRank(primary, limit)
-    }
+    // Always run both sources in parallel — combine for maximum article count
+    const [primary, fallback] = await Promise.allSettled([
+      fetchFromTheNewsAPI(limit),
+      fetchFromGNews(limit),
+    ])
 
-    // Primary came up short — try fallback
-    const fallback = await fetchFromGNews(limit)
-    const combined = [...primary, ...fallback]
+    const primaryArticles = primary.status === 'fulfilled' ? primary.value : []
+    const fallbackArticles = fallback.status === 'fulfilled' ? fallback.value : []
+    const combined = [...primaryArticles, ...fallbackArticles]
+
     return filterAndRank(combined, limit)
   } catch {
     // Fail silently — caller uses static fallback

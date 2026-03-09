@@ -46,7 +46,7 @@ export function filterAndRank(articles: NewsArticle[], limit: number): NewsArtic
   return deduped
     .filter(isValidArticle)
     .map((a) => ({ ...a, relevanceScore: scoreRelevance(a) }))
-    .filter((a) => (a.relevanceScore ?? 0) >= 0)
+    .filter((a) => (a.relevanceScore ?? 0) >= -1)
     .sort((a, b) => (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0))
     .slice(0, limit)
 }
