@@ -53,7 +53,7 @@ export default function AdminLoginClient() {
       }}
     >
       <div style={{ marginBottom: 48, textAlign: 'center' }}>
-        <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#C9A96E', marginBottom: 8 }}>
+        <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8862A', marginBottom: 8 }}>
           Salesman Solutions
         </div>
         <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', letterSpacing: '0.08em' }}>Admin Access</div>
@@ -76,7 +76,7 @@ export default function AdminLoginClient() {
         <button
           onClick={handleGitHubLogin}
           disabled={loading}
-          style={{ width: '100%', padding: '13px 24px', background: loading ? 'rgba(201,169,110,0.6)' : '#C9A96E', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}
+          style={{ width: '100%', padding: '13px 24px', background: loading ? 'rgba(184,134,42,0.6)' : '#B8862A', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}
         >
           {loading ? 'Connecting...' : (
             <>

@@ -32,7 +32,7 @@ export default function SolutionsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>
               PLATFORM OVERVIEW
             </span>
             <h1 className="font-display font-bold text-white mt-4" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>
@@ -61,10 +61,10 @@ export default function SolutionsPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ y: -6, transition: { duration: 0.4 } }}
           >
-            <div className="font-display font-bold" style={{ fontSize: '80px', color: '#C9A96E', letterSpacing: '-0.04em', lineHeight: 0.9 }}>
+            <div className="font-display font-bold" style={{ fontSize: '80px', color: '#B8862A', letterSpacing: '-0.04em', lineHeight: 0.9 }}>
               IRIS
             </div>
-            <p className="font-body font-semibold uppercase tracking-wider mt-3" style={{ fontSize: '11px', color: 'rgba(201,169,110,0.7)' }}>
+            <p className="font-body font-semibold uppercase tracking-wider mt-3" style={{ fontSize: '11px', color: 'rgba(184,134,42,0.7)' }}>
               Intelligent Resource Infrastructure Systems
             </p>
             <p className="font-body mt-5" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.75 }}>
@@ -78,9 +78,9 @@ export default function SolutionsPage() {
               ))}
             </div>
             <div style={{ marginTop: '36px' }}>
-              <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '11px', color: '#C9A96E' }}>OPTIMIZATIONS</span>
+              <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '11px', color: '#B8862A' }}>OPTIMIZATIONS</span>
             </div>
-            <Link href="/solutions/iris" style={{ display: 'inline-block', marginTop: '24px', background: '#C9A96E', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <Link href="/solutions/iris" style={{ display: 'inline-block', marginTop: '24px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
               Explore IRIS →
             </Link>
           </motion.div>
@@ -95,10 +95,10 @@ export default function SolutionsPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             whileHover={{ y: -6, transition: { duration: 0.4 } }}
           >
-            <div className="font-display font-bold" style={{ fontSize: '80px', color: '#C9A96E', letterSpacing: '-0.04em', lineHeight: 0.9 }}>
+            <div className="font-display font-bold" style={{ fontSize: '80px', color: '#B8862A', letterSpacing: '-0.04em', lineHeight: 0.9 }}>
               ASSAN
             </div>
-            <p className="font-body font-semibold uppercase tracking-wider mt-3" style={{ fontSize: '11px', color: 'rgba(201,169,110,0.7)' }}>
+            <p className="font-body font-semibold uppercase tracking-wider mt-3" style={{ fontSize: '11px', color: 'rgba(184,134,42,0.7)' }}>
               Applied Systems for Service and Network Operations
             </p>
             <p className="font-body mt-5" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.75 }}>
@@ -112,9 +112,9 @@ export default function SolutionsPage() {
               ))}
             </div>
             <div style={{ marginTop: '36px' }}>
-              <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '11px', color: '#C9A96E' }}>OPERATIONS</span>
+              <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '11px', color: '#B8862A' }}>OPERATIONS</span>
             </div>
-            <Link href="/solutions/assan" style={{ display: 'inline-block', marginTop: '24px', background: '#C9A96E', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <Link href="/solutions/assan" style={{ display: 'inline-block', marginTop: '24px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
               Explore ASSAN →
             </Link>
           </motion.div>

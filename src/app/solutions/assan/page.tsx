@@ -32,8 +32,8 @@ export default function ASSANPage() {
 
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>PLATFORM</span>
-            <div className="font-display font-bold" style={{ fontSize: 'clamp(4rem, 12vw, 12rem)', color: '#C9A96E', letterSpacing: '-0.04em', lineHeight: 0.85, marginTop: '8px' }}>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>PLATFORM</span>
+            <div className="font-display font-bold" style={{ fontSize: 'clamp(4rem, 12vw, 12rem)', color: '#B8862A', letterSpacing: '-0.04em', lineHeight: 0.85, marginTop: '8px' }}>
               ASSAN
             </div>
             <p className="font-body font-semibold uppercase tracking-wider mt-2" style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>
@@ -42,7 +42,7 @@ export default function ASSANPage() {
             <p className="font-body font-light mt-6" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '560px' }}>
               The operational deployment platform. ASSAN executes in the real world — bringing structured operations to property, hospitality, logistics, and labor environments.
             </p>
-            <span className="font-body font-semibold uppercase tracking-[0.15em] block mt-6" style={{ fontSize: '11px', color: '#C9A96E' }}>OPERATIONS</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em] block mt-6" style={{ fontSize: '11px', color: '#B8862A' }}>OPERATIONS</span>
           </motion.div>
         </div>
       </section>
@@ -51,7 +51,7 @@ export default function ASSANPage() {
       <section style={{ background: '#FDFBF7', padding: '120px 24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div className="mb-14" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>CAPABILITIES</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>CAPABILITIES</span>
             <h2 className="font-display font-bold mt-3" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', color: '#2B3A67', letterSpacing: '-0.03em', lineHeight: 1.1 }}>What ASSAN deploys.</h2>
           </motion.div>
 
@@ -67,7 +67,7 @@ export default function ASSANPage() {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
               >
                 <h3 className="font-display font-bold text-white" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>{cap.title}</h3>
-                <div style={{ width: '24px', height: '2px', background: '#C9A96E', margin: '14px 0', borderRadius: '2px' }} />
+                <div style={{ width: '24px', height: '2px', background: '#B8862A', margin: '14px 0', borderRadius: '2px' }} />
                 <p className="font-body" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>{cap.desc}</p>
               </motion.div>
             ))}
@@ -79,7 +79,7 @@ export default function ASSANPage() {
       <section style={{ background: '#fff', padding: '120px 24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div className="mb-12" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>ASSAN OPERATIONS</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>ASSAN OPERATIONS</span>
             <h2 className="font-display font-bold mt-3" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', color: '#2B3A67', letterSpacing: '-0.03em' }}>Deployed operations.</h2>
           </motion.div>
 
@@ -95,11 +95,11 @@ export default function ASSANPage() {
                 transition={{ duration: 0.7, delay: i * 0.1 }}
                 whileHover={{ y: -4 }}
               >
-                <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#C9A96E' }}>ASSAN OPERATION</span>
+                <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#B8862A' }}>ASSAN OPERATION</span>
                 <h3 className="font-display font-bold text-white mt-3" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>{op.name}</h3>
                 <p className="font-body mt-1" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>{op.period}</p>
                 <p className="font-body mt-3" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>{op.desc}</p>
-                <Link href={`/case-studies/${op.slug}`} className="font-body font-semibold no-underline mt-5 inline-flex items-center gap-2" style={{ fontSize: '14px', color: '#C9A96E' }}>
+                <Link href={`/case-studies/${op.slug}`} className="font-body font-semibold no-underline mt-5 inline-flex items-center gap-2" style={{ fontSize: '14px', color: '#B8862A' }}>
                   View Operation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               </motion.div>
@@ -113,7 +113,7 @@ export default function ASSANPage() {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <h2 className="font-display font-bold text-white" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', letterSpacing: '-0.03em' }}>Ready to deploy operational systems?</h2>
           <p className="font-body font-light mt-4" style={{ fontSize: '17px', color: 'rgba(255,255,255,0.55)' }}>ASSAN engagements begin with an operational assessment.</p>
-          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#C9A96E', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
+          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
             Start a Conversation →
           </a>
         </motion.div>

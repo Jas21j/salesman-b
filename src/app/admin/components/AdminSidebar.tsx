@@ -41,9 +41,9 @@ export default function AdminSidebar() {
                 padding: '10px 20px',
                 fontSize: 13,
                 fontWeight: isActive ? 600 : 400,
-                color: isActive ? '#C9A96E' : 'rgba(255,255,255,0.5)',
+                color: isActive ? '#B8862A' : 'rgba(255,255,255,0.5)',
                 textDecoration: 'none',
-                borderLeft: isActive ? '2px solid #C9A96E' : '2px solid transparent',
+                borderLeft: isActive ? '2px solid #B8862A' : '2px solid transparent',
                 background: isActive ? 'rgba(201, 169, 110, 0.06)' : 'transparent',
                 transition: 'all 0.15s ease',
               }}

@@ -40,7 +40,7 @@ export default function AdminUnauthorizedClient() {
             margin: '0 auto 24px',
           }}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8862A" strokeWidth="2">
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -67,7 +67,7 @@ export default function AdminUnauthorizedClient() {
           style={{
             padding: '10px 24px',
             background: 'transparent',
-            color: '#C9A96E',
+            color: '#B8862A',
             border: '1px solid rgba(201, 169, 110, 0.4)',
             borderRadius: 8,
             fontSize: 13,

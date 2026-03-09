@@ -61,7 +61,7 @@ export default function SolutionsAdmin({ initialSolutions }: Props) {
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', margin: '4px 0 0' }}>Manage IRIS and ASSAN solution entries</p>
         </div>
         <button onClick={() => setEditing({ platform: 'IRIS', status: 'draft', featured: false, sort_order: 0 })}
-          style={{ padding: '10px 20px', background: '#C9A96E', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+          style={{ padding: '10px 20px', background: '#B8862A', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
           + New Solution
         </button>
       </div>
@@ -114,9 +114,9 @@ export default function SolutionsAdmin({ initialSolutions }: Props) {
                 <label htmlFor="sol-featured" style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', cursor: 'pointer' }}>Featured</label>
               </div>
             </div>
-            {message && <p style={{ marginTop: 12, fontSize: 12, color: '#C9A96E' }}>{message}</p>}
+            {message && <p style={{ marginTop: 12, fontSize: 12, color: '#B8862A' }}>{message}</p>}
             <div style={{ display: 'flex', gap: 10, marginTop: 24 }}>
-              <button onClick={handleSave} disabled={saving} style={{ flex: 1, padding: '11px', background: '#C9A96E', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+              <button onClick={handleSave} disabled={saving} style={{ flex: 1, padding: '11px', background: '#B8862A', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {saving ? 'Saving...' : 'Save'}
               </button>
               <button onClick={() => setEditing(null)} style={{ padding: '11px 20px', background: 'transparent', color: 'rgba(255,255,255,0.4)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, fontSize: 13, cursor: 'pointer' }}>
@@ -136,7 +136,7 @@ export default function SolutionsAdmin({ initialSolutions }: Props) {
               <div style={{ fontSize: 13, fontWeight: 500, color: '#fff', marginBottom: 2 }}>{s.title}</div>
               <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>{s.platform} · /{s.slug}</div>
             </div>
-            {s.featured && <span style={{ fontSize: 10, padding: '1px 6px', background: 'rgba(201,169,110,0.15)', color: '#C9A96E', borderRadius: 4, fontWeight: 600, letterSpacing: '0.06em' }}>FEATURED</span>}
+            {s.featured && <span style={{ fontSize: 10, padding: '1px 6px', background: 'rgba(184,134,42,0.15)', color: '#B8862A', borderRadius: 4, fontWeight: 600, letterSpacing: '0.06em' }}>FEATURED</span>}
             <StatusBadge status={s.status} />
             <button onClick={() => setEditing({ ...s })} style={{ padding: '6px 12px', background: 'transparent', color: 'rgba(255,255,255,0.5)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, fontSize: 12, cursor: 'pointer' }}>
               Edit

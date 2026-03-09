@@ -36,7 +36,7 @@ export default function AdminTopBar() {
             fontWeight: 600,
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
-            color: '#C9A96E',
+            color: '#B8862A',
           }}
         >
           Salesman Solutions

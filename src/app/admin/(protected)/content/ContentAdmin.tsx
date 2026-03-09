@@ -94,7 +94,7 @@ export default function ContentAdmin({ initialSections, initialSettings }: Props
           <h2 style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.1em', textTransform: 'uppercase', margin: 0 }}>
             Site Settings
           </h2>
-          {settingMessage && <span style={{ fontSize: 12, color: '#C9A96E' }}>{settingMessage}</span>}
+          {settingMessage && <span style={{ fontSize: 12, color: '#B8862A' }}>{settingMessage}</span>}
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {EDITABLE_SETTINGS.map(key => {

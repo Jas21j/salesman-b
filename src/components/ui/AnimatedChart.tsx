@@ -16,7 +16,7 @@ interface AnimatedChartProps {
 function ArcChart({
   value,
   size = 120,
-  color = '#C9A96E',
+  color = '#B8862A',
   trackColor = 'rgba(255,255,255,0.08)',
   strokeWidth = 8,
   inView,
@@ -57,7 +57,7 @@ function ArcChart({
 function RingChart({
   value,
   size = 100,
-  color = '#C9A96E',
+  color = '#B8862A',
   trackColor = 'rgba(255,255,255,0.08)',
   strokeWidth = 10,
   inView,
@@ -95,7 +95,7 @@ function RingChart({
 
 function BarChart({
   value,
-  color = '#C9A96E',
+  color = '#B8862A',
   trackColor = 'rgba(255,255,255,0.08)',
   inView,
 }: AnimatedChartProps & { inView: boolean }) {

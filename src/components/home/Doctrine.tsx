@@ -68,7 +68,7 @@ export default function Doctrine() {
           transform: 'translate(-50%, -50%)',
           width: '800px',
           height: '800px',
-          background: 'radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(184,134,42,0.06) 0%, transparent 70%)',
           pointerEvents: 'none',
           zIndex: 0,
         }}
@@ -85,7 +85,7 @@ export default function Doctrine() {
         >
           <span
             className="font-body font-semibold uppercase tracking-[0.15em]"
-            style={{ fontSize: '12px', color: '#C9A96E' }}
+            style={{ fontSize: '12px', color: '#B8862A' }}
           >
             THE METHOD
           </span>
@@ -132,7 +132,7 @@ export default function Doctrine() {
                 style={{
                   fontSize: '52px',
                   fontWeight: 800,
-                  color: 'rgba(201,169,110,0.2)',
+                  color: 'rgba(184,134,42,0.2)',
                   lineHeight: 1,
                   display: 'block',
                 }}
@@ -165,7 +165,7 @@ export default function Doctrine() {
                 }}
               >
                 <motion.div
-                  style={{ height: '100%', background: '#C9A96E', borderRadius: '3px' }}
+                  style={{ height: '100%', background: '#B8862A', borderRadius: '3px' }}
                   initial={{ width: '0%' }}
                   whileInView={{ width: `${step.progress}%` }}
                   viewport={{ once: true }}

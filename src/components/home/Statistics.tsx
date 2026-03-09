@@ -85,7 +85,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
             <AnimatedChart
               value={stat.numericValue}
               type="bar"
-              color="#C9A96E"
+              color="#B8862A"
               trackColor="rgba(255,255,255,0.15)"
             />
           </div>
@@ -95,7 +95,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
             type={stat.chartType}
             size={chartSize}
             strokeWidth={isLarge ? 9 : 7}
-            color="#C9A96E"
+            color="#B8862A"
             trackColor="rgba(255,255,255,0.15)"
           />
         )}
@@ -106,7 +106,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
         className="font-display font-bold"
         style={{
           fontSize: isLarge ? 'clamp(2rem, 4vw, 3rem)' : 'clamp(1.6rem, 2.8vw, 2.25rem)',
-          color: '#C9A96E',
+          color: '#B8862A',
           letterSpacing: '-0.03em',
           lineHeight: 1,
           marginBottom: '8px',
@@ -171,7 +171,7 @@ export default function Statistics() {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'radial-gradient(circle, rgba(201,169,110,0.04) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(184,134,42,0.04) 1px, transparent 1px)',
           backgroundSize: '28px 28px',
           zIndex: 1,
           pointerEvents: 'none',
@@ -186,7 +186,7 @@ export default function Statistics() {
           left: 0,
           right: 0,
           height: '3px',
-          background: 'linear-gradient(90deg, transparent, #C9A96E 20%, #C9A96E 80%, transparent)',
+          background: 'linear-gradient(90deg, transparent, #B8862A 20%, #B8862A 80%, transparent)',
           zIndex: 2,
         }}
       />
@@ -202,7 +202,7 @@ export default function Statistics() {
         >
           <span
             className="font-body font-semibold uppercase tracking-[0.15em] block"
-            style={{ fontSize: '12px', color: '#C9A96E' }}
+            style={{ fontSize: '12px', color: '#B8862A' }}
           >
             SYSTEMS IN PRACTICE
           </span>
@@ -217,7 +217,7 @@ export default function Statistics() {
           >
             What structured systems achieve.
           </h2>
-          <div style={{ width: '48px', height: '2px', background: '#C9A96E', borderRadius: '2px', marginTop: '16px' }} />
+          <div style={{ width: '48px', height: '2px', background: '#B8862A', borderRadius: '2px', marginTop: '16px' }} />
         </motion.div>
 
         {/* Stats grid */}
@@ -229,7 +229,7 @@ export default function Statistics() {
             gap: '1px',
             background: 'rgba(255,255,255,0.06)',
             borderRadius: '16px',
-            border: '1px solid rgba(201,169,110,0.15)',
+            border: '1px solid rgba(184,134,42,0.15)',
             overflow: 'hidden',
           }}
         >
@@ -245,7 +245,7 @@ export default function Statistics() {
                 transition: 'background 0.3s',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.background = 'rgba(201,169,110,0.08)'
+                (e.currentTarget as HTMLDivElement).style.background = 'rgba(184,134,42,0.08)'
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLDivElement).style.background = 'rgba(20, 32, 65, 0.55)'

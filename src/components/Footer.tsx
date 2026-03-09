@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="flex gap-3 mt-5">
               <span
                 className="font-body font-semibold tracking-widest uppercase"
-                style={{ fontSize: '10px', color: 'rgba(201,169,110,0.5)' }}
+                style={{ fontSize: '10px', color: 'rgba(184,134,42,0.5)' }}
               >
                 IRIS
               </span>

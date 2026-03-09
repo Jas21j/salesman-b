@@ -48,7 +48,7 @@ function PlatformCard({
         className="font-display font-bold"
         style={{
           fontSize: 'clamp(64px, 8vw, 96px)',
-          color: '#C9A96E',
+          color: '#B8862A',
           letterSpacing: '-0.04em',
           lineHeight: 0.9,
           marginBottom: '16px',
@@ -60,7 +60,7 @@ function PlatformCard({
       {/* Full name */}
       <p
         className="font-body font-semibold uppercase tracking-wider"
-        style={{ fontSize: '11px', color: 'rgba(201,169,110,0.7)', marginBottom: '8px' }}
+        style={{ fontSize: '11px', color: 'rgba(184,134,42,0.7)', marginBottom: '8px' }}
       >
         {fullName}
       </p>
@@ -97,7 +97,7 @@ function PlatformCard({
       {/* Label */}
       <span
         className="font-body font-semibold uppercase tracking-[0.15em]"
-        style={{ fontSize: '11px', color: '#C9A96E' }}
+        style={{ fontSize: '11px', color: '#B8862A' }}
       >
         {label}
       </span>
@@ -154,7 +154,7 @@ export default function PlatformArchitecture() {
         >
           <span
             className="font-body font-semibold uppercase tracking-[0.15em]"
-            style={{ fontSize: '12px', color: '#C9A96E' }}
+            style={{ fontSize: '12px', color: '#B8862A' }}
           >
             PLATFORM ARCHITECTURE
           </span>
@@ -186,7 +186,7 @@ export default function PlatformArchitecture() {
           {/* Gold divider */}
           <div
             className="hidden md:block flex-shrink-0"
-            style={{ width: '1px', background: 'rgba(201,169,110,0.3)', margin: '40px 0' }}
+            style={{ width: '1px', background: 'rgba(184,134,42,0.3)', margin: '40px 0' }}
           />
 
           <PlatformCard

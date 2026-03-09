@@ -95,7 +95,7 @@ video {
 /* ── Gold top border card ── */
 .navy-card {
   background: #2B3A67;
-  border-top: 3px solid #C9A96E;
+  border-top: 3px solid #B8862A;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -104,7 +104,7 @@ video {
 
 .navy-card-deep {
   background: #1E2A4A;
-  border-top: 3px solid #C9A96E;
+  border-top: 3px solid #B8862A;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -153,7 +153,7 @@ video {
   left: 0;
   width: 0;
   height: 1.5px;
-  background: #C9A96E;
+  background: #B8862A;
   transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -195,7 +195,7 @@ video {
 /* ── Button / link focus ── */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #C9A96E;
+  outline: 2px solid #B8862A;
   outline-offset: 3px;
 }
 

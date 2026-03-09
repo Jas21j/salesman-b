@@ -74,7 +74,7 @@ export default function NewsTickerSection({ articles }: Props) {
           right: 0,
           height: 1,
           background:
-            'linear-gradient(90deg, transparent, rgba(201,169,110,0.2) 30%, rgba(201,169,110,0.2) 70%, transparent)',
+            'linear-gradient(90deg, transparent, rgba(184,134,42,0.2) 30%, rgba(184,134,42,0.2) 70%, transparent)',
         }}
       />
 
@@ -92,7 +92,7 @@ export default function NewsTickerSection({ articles }: Props) {
           <div>
             <span
               className="font-body font-semibold uppercase tracking-[0.15em]"
-              style={{ fontSize: 12, color: '#C9A96E', display: 'block', marginBottom: 12 }}
+              style={{ fontSize: 12, color: '#B8862A', display: 'block', marginBottom: 12 }}
             >
               INTELLIGENCE FEED
             </span>
@@ -126,7 +126,7 @@ export default function NewsTickerSection({ articles }: Props) {
                     border: 'none',
                     background:
                       current === i
-                        ? '#C9A96E'
+                        ? '#B8862A'
                         : 'rgba(255,255,255,0.15)',
                     cursor: 'pointer',
                     padding: 0,
@@ -166,7 +166,7 @@ export default function NewsTickerSection({ articles }: Props) {
                     background: '#2B3A67',
                     borderRadius: 14,
                     overflow: 'hidden',
-                    borderTop: '3px solid #C9A96E',
+                    borderTop: '3px solid #B8862A',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
@@ -216,7 +216,7 @@ export default function NewsTickerSection({ articles }: Props) {
                         className="font-body font-semibold uppercase tracking-[0.1em]"
                         style={{
                           fontSize: 10,
-                          color: '#C9A96E',
+                          color: '#B8862A',
                         }}
                       >
                         {article.source}
@@ -264,13 +264,13 @@ export default function NewsTickerSection({ articles }: Props) {
                         className="font-body font-medium"
                         style={{
                           fontSize: 12,
-                          color: '#C9A96E',
+                          color: '#B8862A',
                           letterSpacing: '0.02em',
                         }}
                       >
                         Read Article
                       </span>
-                      <span style={{ fontSize: 12, color: '#C9A96E' }}>→</span>
+                      <span style={{ fontSize: 12, color: '#B8862A' }}>→</span>
                     </div>
                   </div>
                 </motion.div>

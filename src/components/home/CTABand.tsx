@@ -30,7 +30,7 @@ export default function CTABand() {
           transform: 'translateX(-50%)',
           width: '600px',
           height: '400px',
-          background: 'radial-gradient(ellipse, rgba(201,169,110,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(184,134,42,0.07) 0%, transparent 70%)',
           pointerEvents: 'none',
           zIndex: 0,
         }}
@@ -62,7 +62,7 @@ export default function CTABand() {
       >
         <span
           className="font-display font-bold select-none"
-          style={{ fontSize: 'clamp(60px, 10vw, 140px)', color: 'rgba(201,169,110,0.05)', letterSpacing: '-0.04em' }}
+          style={{ fontSize: 'clamp(60px, 10vw, 140px)', color: 'rgba(184,134,42,0.05)', letterSpacing: '-0.04em' }}
         >
           IRIS
         </span>
@@ -125,7 +125,7 @@ export default function CTABand() {
             <a
               href="mailto:JaheimSalesman@gmail.com"
               style={{
-                background: '#C9A96E',
+                background: '#B8862A',
                 color: '#1E2A4A',
                 fontFamily: 'var(--font-inter)',
                 fontWeight: 600,
@@ -139,7 +139,7 @@ export default function CTABand() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 12px 35px rgba(201,169,110,0.35)'
+                e.currentTarget.style.boxShadow = '0 12px 35px rgba(184,134,42,0.35)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = ''

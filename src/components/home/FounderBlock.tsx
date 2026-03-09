@@ -62,7 +62,7 @@ export default function FounderBlock() {
           >
             <span
               className="font-body font-semibold uppercase tracking-[0.15em]"
-              style={{ fontSize: '12px', color: '#C9A96E' }}
+              style={{ fontSize: '12px', color: '#B8862A' }}
             >
               THE FOUNDER
             </span>
@@ -109,7 +109,7 @@ export default function FounderBlock() {
 
             {/* Gold accent rule */}
             <div
-              style={{ width: '40px', height: '3px', background: '#C9A96E', marginTop: '28px', borderRadius: '2px' }}
+              style={{ width: '40px', height: '3px', background: '#B8862A', marginTop: '28px', borderRadius: '2px' }}
             />
 
             <div className="flex flex-wrap gap-6 mt-6">
@@ -118,8 +118,8 @@ export default function FounderBlock() {
                 className="font-body font-semibold no-underline transition-colors duration-200 hover:text-gold"
                 style={{
                   fontSize: '15px',
-                  color: '#C9A96E',
-                  borderBottom: '1.5px solid rgba(201,169,110,0.3)',
+                  color: '#B8862A',
+                  borderBottom: '1.5px solid rgba(184,134,42,0.3)',
                   paddingBottom: '2px',
                 }}
               >

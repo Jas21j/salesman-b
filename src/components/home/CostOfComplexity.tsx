@@ -66,7 +66,7 @@ function DataCard({ point, index }: { point: DataPoint; index: number }) {
         className="font-display font-bold select-none pointer-events-none absolute"
         style={{
           fontSize: 'clamp(80px, 10vw, 120px)',
-          color: 'rgba(201,169,110,0.12)',
+          color: 'rgba(184,134,42,0.12)',
           top: '-12px',
           right: '-8px',
           lineHeight: 1,
@@ -84,7 +84,7 @@ function DataCard({ point, index }: { point: DataPoint; index: number }) {
               type="arc"
               size={96}
               strokeWidth={7}
-              color="#C9A96E"
+              color="#B8862A"
               trackColor="rgba(255,255,255,0.06)"
             />
           </div>
@@ -93,7 +93,7 @@ function DataCard({ point, index }: { point: DataPoint; index: number }) {
             <AnimatedChart
               value={point.numericValue}
               type="bar"
-              color="#C9A96E"
+              color="#B8862A"
               trackColor="rgba(255,255,255,0.06)"
             />
           </div>
@@ -103,7 +103,7 @@ function DataCard({ point, index }: { point: DataPoint; index: number }) {
       {/* Value */}
       <div
         className="font-display font-bold"
-        style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#C9A96E', letterSpacing: '-0.03em', lineHeight: 1 }}
+        style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#B8862A', letterSpacing: '-0.03em', lineHeight: 1 }}
       >
         {point.value}
       </div>
@@ -119,7 +119,7 @@ function DataCard({ point, index }: { point: DataPoint; index: number }) {
       {/* Source */}
       <p
         className="font-body mt-3"
-        style={{ fontSize: '12px', color: 'rgba(201,169,110,0.55)', letterSpacing: '0.02em' }}
+        style={{ fontSize: '12px', color: 'rgba(184,134,42,0.55)', letterSpacing: '0.02em' }}
       >
         {point.source}
       </p>
@@ -156,7 +156,7 @@ export default function CostOfComplexity() {
         >
           <span
             className="font-body font-semibold uppercase tracking-[0.15em]"
-            style={{ fontSize: '12px', color: '#C9A96E' }}
+            style={{ fontSize: '12px', color: '#B8862A' }}
           >
             WHY SYSTEMS MATTER
           </span>

@@ -26,10 +26,16 @@ export const metadata: Metadata = {
     'Salesman Solutions is a global venture platform that builds operational systems that improve industries. IRIS and ASSAN — two platforms, one operating philosophy.',
   keywords: 'operational systems, venture platform, IRIS, ASSAN, property operations, digital infrastructure, logistics',
   authors: [{ name: 'Jaheim Salesman' }],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: 'Salesman Solutions — Global Venture Platform',
     description: 'Building operational systems that simplify complexity and transform how industries function.',
     type: 'website',
+    images: ['/logo.png'],
   },
 }
 

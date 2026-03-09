@@ -59,7 +59,7 @@ export default function AdminLoginPage() {
             fontWeight: 600,
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
-            color: '#C9A96E',
+            color: '#B8862A',
             marginBottom: 8,
           }}
         >
@@ -120,7 +120,7 @@ export default function AdminLoginPage() {
           style={{
             width: '100%',
             padding: '13px 24px',
-            background: loading ? 'rgba(201,169,110,0.6)' : '#C9A96E',
+            background: loading ? 'rgba(184,134,42,0.6)' : '#B8862A',
             color: '#1A1A2E',
             border: 'none',
             borderRadius: 8,

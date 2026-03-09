@@ -21,13 +21,13 @@ export default function IRISPage() {
 
         {/* Atmospheric IRIS */}
         <div style={{ position: 'absolute', right: '-5%', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} aria-hidden="true">
-          <span className="font-display font-bold select-none" style={{ fontSize: 'clamp(120px, 20vw, 280px)', color: 'rgba(201,169,110,0.05)', letterSpacing: '-0.04em' }}>IRIS</span>
+          <span className="font-display font-bold select-none" style={{ fontSize: 'clamp(120px, 20vw, 280px)', color: 'rgba(184,134,42,0.05)', letterSpacing: '-0.04em' }}>IRIS</span>
         </div>
 
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>PLATFORM</span>
-            <div className="font-display font-bold" style={{ fontSize: 'clamp(5rem, 15vw, 14rem)', color: '#C9A96E', letterSpacing: '-0.04em', lineHeight: 0.85, marginTop: '8px' }}>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>PLATFORM</span>
+            <div className="font-display font-bold" style={{ fontSize: 'clamp(5rem, 15vw, 14rem)', color: '#B8862A', letterSpacing: '-0.04em', lineHeight: 0.85, marginTop: '8px' }}>
               IRIS
             </div>
             <p className="font-body font-semibold uppercase tracking-wider mt-2" style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>
@@ -36,7 +36,7 @@ export default function IRISPage() {
             <p className="font-body font-light mt-6" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '560px' }}>
               The digital intelligence platform. IRIS builds the technology layer that makes operations measurable, automated, and scalable.
             </p>
-            <span className="font-body font-semibold uppercase tracking-[0.15em] block mt-6" style={{ fontSize: '11px', color: '#C9A96E' }}>OPTIMIZATIONS</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em] block mt-6" style={{ fontSize: '11px', color: '#B8862A' }}>OPTIMIZATIONS</span>
           </motion.div>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function IRISPage() {
       <section style={{ background: '#FDFBF7', padding: '120px 24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div className="mb-14" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>CAPABILITIES</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>CAPABILITIES</span>
             <h2 className="font-display font-bold mt-3" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', color: '#2B3A67', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
               What IRIS builds.
             </h2>
@@ -63,7 +63,7 @@ export default function IRISPage() {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}
               >
                 <h3 className="font-display font-bold text-white" style={{ fontSize: '20px', letterSpacing: '-0.01em' }}>{cap.title}</h3>
-                <div style={{ width: '24px', height: '2px', background: '#C9A96E', margin: '14px 0', borderRadius: '2px' }} />
+                <div style={{ width: '24px', height: '2px', background: '#B8862A', margin: '14px 0', borderRadius: '2px' }} />
                 <p className="font-body" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>{cap.desc}</p>
               </motion.div>
             ))}
@@ -75,7 +75,7 @@ export default function IRISPage() {
       <section style={{ background: '#fff', padding: '120px 24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div className="mb-12" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>IRIS OPTIMIZATION</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>IRIS OPTIMIZATION</span>
             <h2 className="font-display font-bold mt-3" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)', color: '#2B3A67', letterSpacing: '-0.03em' }}>Deployed work.</h2>
           </motion.div>
 
@@ -87,7 +87,7 @@ export default function IRISPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#C9A96E' }}>IRIS OPTIMIZATION</span>
+            <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#B8862A' }}>IRIS OPTIMIZATION</span>
             <h3 className="font-display font-bold text-white mt-3" style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', letterSpacing: '-0.02em' }}>Operation Miss Scholastic America</h3>
             <p className="font-body mt-2" style={{ fontSize: '13px', color: '#E8DCC8', opacity: 0.6 }}>2023–2024</p>
             <p className="font-body mt-4" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.65 }}>
@@ -95,13 +95,13 @@ export default function IRISPage() {
             </p>
             <div className="flex gap-2 mt-5 flex-wrap">
               {[{ v: '0→Full', l: 'Infrastructure' }, { v: '4', l: 'Systems' }, { v: '1', l: 'Platform' }].map(m => (
-                <div key={m.l} style={{ background: 'rgba(201,169,110,0.1)', border: '1px solid rgba(201,169,110,0.2)', borderRadius: '9999px', padding: '4px 12px' }}>
-                  <span className="font-display font-bold" style={{ fontSize: '13px', color: '#C9A96E' }}>{m.v}</span>
+                <div key={m.l} style={{ background: 'rgba(184,134,42,0.1)', border: '1px solid rgba(184,134,42,0.2)', borderRadius: '9999px', padding: '4px 12px' }}>
+                  <span className="font-display font-bold" style={{ fontSize: '13px', color: '#B8862A' }}>{m.v}</span>
                   <span className="font-body ml-1" style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)' }}>{m.l}</span>
                 </div>
               ))}
             </div>
-            <Link href="/case-studies/miss-scholastic-america" className="font-body font-semibold no-underline mt-6 inline-flex items-center gap-2" style={{ fontSize: '14px', color: '#C9A96E' }}>
+            <Link href="/case-studies/miss-scholastic-america" className="font-body font-semibold no-underline mt-6 inline-flex items-center gap-2" style={{ fontSize: '14px', color: '#B8862A' }}>
               View Operation
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
@@ -118,7 +118,7 @@ export default function IRISPage() {
           <p className="font-body font-light mt-4" style={{ fontSize: '17px', color: 'rgba(255,255,255,0.55)' }}>
             IRIS engagements start with a scoping conversation.
           </p>
-          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#C9A96E', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
+          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
             Start a Conversation →
           </a>
         </motion.div>

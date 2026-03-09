@@ -59,7 +59,7 @@ export default function Insights({ articles }: Props) {
           >
             <span
               className="font-body font-semibold uppercase tracking-[0.15em]"
-              style={{ fontSize: '12px', color: '#C9A96E' }}
+              style={{ fontSize: '12px', color: '#B8862A' }}
             >
               OPERATIONAL INTELLIGENCE
             </span>
@@ -122,7 +122,7 @@ export default function Insights({ articles }: Props) {
                 className="font-display font-bold select-none pointer-events-none absolute"
                 style={{
                   fontSize: 'clamp(80px, 10vw, 120px)',
-                  color: 'rgba(201,169,110,0.1)',
+                  color: 'rgba(184,134,42,0.1)',
                   top: '-12px',
                   right: '-8px',
                   lineHeight: 1,
@@ -134,7 +134,7 @@ export default function Insights({ articles }: Props) {
               {/* Tag */}
               <span
                 className="font-body font-semibold uppercase tracking-[0.12em]"
-                style={{ fontSize: '10px', color: '#C9A96E' }}
+                style={{ fontSize: '10px', color: '#B8862A' }}
               >
                 {insight.tag}
               </span>
@@ -158,7 +158,7 @@ export default function Insights({ articles }: Props) {
               {/* Source */}
               <p
                 className="font-body mt-5"
-                style={{ fontSize: '11px', color: 'rgba(201,169,110,0.5)', letterSpacing: '0.03em' }}
+                style={{ fontSize: '11px', color: 'rgba(184,134,42,0.5)', letterSpacing: '0.03em' }}
               >
                 {insight.source}
               </p>
@@ -185,7 +185,7 @@ export default function Insights({ articles }: Props) {
               fontSize: '13px',
               letterSpacing: '0.06em',
               textTransform: 'uppercase',
-              color: '#C9A96E',
+              color: '#B8862A',
               textDecoration: 'none',
             }}
           >

@@ -86,7 +86,7 @@ export default function ProofOfSystem() {
         >
           <span
             className="font-body font-semibold uppercase tracking-[0.15em]"
-            style={{ fontSize: '12px', color: '#C9A96E' }}
+            style={{ fontSize: '12px', color: '#B8862A' }}
           >
             CODED WORK
           </span>
@@ -128,7 +128,7 @@ export default function ProofOfSystem() {
                 className="font-display font-bold select-none pointer-events-none absolute"
                 style={{
                   fontSize: 'clamp(80px, 10vw, 120px)',
-                  color: 'rgba(201,169,110,0.1)',
+                  color: 'rgba(184,134,42,0.1)',
                   top: '-10px',
                   right: '-8px',
                   lineHeight: 1,
@@ -140,7 +140,7 @@ export default function ProofOfSystem() {
               {/* Platform tag */}
               <span
                 className="font-body font-semibold uppercase tracking-[0.12em]"
-                style={{ fontSize: '11px', color: '#C9A96E' }}
+                style={{ fontSize: '11px', color: '#B8862A' }}
               >
                 {op.tag}
               </span>
@@ -175,15 +175,15 @@ export default function ProofOfSystem() {
                   <div
                     key={m.label}
                     style={{
-                      background: 'rgba(201,169,110,0.1)',
-                      border: '1px solid rgba(201,169,110,0.2)',
+                      background: 'rgba(184,134,42,0.1)',
+                      border: '1px solid rgba(184,134,42,0.2)',
                       borderRadius: '9999px',
                       padding: '4px 12px',
                     }}
                   >
                     <span
                       className="font-display font-bold"
-                      style={{ fontSize: '13px', color: '#C9A96E' }}
+                      style={{ fontSize: '13px', color: '#B8862A' }}
                     >
                       {m.value}
                     </span>
@@ -201,7 +201,7 @@ export default function ProofOfSystem() {
               <Link
                 href={`/case-studies/${op.slug}`}
                 className="font-body font-semibold no-underline mt-6 inline-flex items-center gap-2 transition-colors duration-200"
-                style={{ fontSize: '14px', color: '#C9A96E' }}
+                style={{ fontSize: '14px', color: '#B8862A' }}
               >
                 View Operation
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

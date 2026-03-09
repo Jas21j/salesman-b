@@ -130,7 +130,7 @@ export default function InsightsAdmin({ initialInsights }: Props) {
         </div>
         <button
           onClick={openNew}
-          style={{ padding: '10px 20px', background: '#C9A96E', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
+          style={{ padding: '10px 20px', background: '#B8862A', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
         >
           + New Insight
         </button>
@@ -212,11 +212,11 @@ export default function InsightsAdmin({ initialInsights }: Props) {
             </div>
 
             {message && (
-              <p style={{ marginTop: 12, fontSize: 12, color: '#C9A96E' }}>{message}</p>
+              <p style={{ marginTop: 12, fontSize: 12, color: '#B8862A' }}>{message}</p>
             )}
 
             <div style={{ display: 'flex', gap: 10, marginTop: 24 }}>
-              <button onClick={handleSave} disabled={saving} style={{ flex: 1, padding: '11px', background: '#C9A96E', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer' }}>
+              <button onClick={handleSave} disabled={saving} style={{ flex: 1, padding: '11px', background: '#B8862A', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer' }}>
                 {saving ? 'Saving...' : 'Save Insight'}
               </button>
               <button onClick={closeEditor} style={{ padding: '11px 20px', background: 'transparent', color: 'rgba(255,255,255,0.4)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, fontSize: 13, cursor: 'pointer' }}>
@@ -251,7 +251,7 @@ export default function InsightsAdmin({ initialInsights }: Props) {
                     {insight.title}
                   </span>
                   {insight.featured && (
-                    <span style={{ fontSize: 10, padding: '1px 6px', background: 'rgba(201,169,110,0.15)', color: '#C9A96E', borderRadius: 4, fontWeight: 600, letterSpacing: '0.06em', flexShrink: 0 }}>
+                    <span style={{ fontSize: 10, padding: '1px 6px', background: 'rgba(184,134,42,0.15)', color: '#B8862A', borderRadius: 4, fontWeight: 600, letterSpacing: '0.06em', flexShrink: 0 }}>
                       FEATURED
                     </span>
                   )}

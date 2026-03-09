@@ -106,7 +106,7 @@ export default function DeploymentDomains() {
         <div style={{ textAlign: 'center', paddingBottom: '56px' }}>
           <span
             className="font-body font-semibold uppercase tracking-[0.15em]"
-            style={{ fontSize: '12px', color: '#C9A96E' }}
+            style={{ fontSize: '12px', color: '#B8862A' }}
           >
             DEPLOYMENT DOMAINS
           </span>
@@ -136,7 +136,7 @@ export default function DeploymentDomains() {
                   padding: '28px 32px',
                   background: 'transparent',
                   border: 'none',
-                  borderLeft: activeIndex === i ? '3px solid #C9A96E' : '3px solid transparent',
+                  borderLeft: activeIndex === i ? '3px solid #B8862A' : '3px solid transparent',
                   borderBottom: i < domains.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
                   cursor: 'pointer',
                   transition: 'background 0.3s',
@@ -149,7 +149,7 @@ export default function DeploymentDomains() {
                   className="font-display font-bold"
                   style={{
                     fontSize: '28px',
-                    color: activeIndex === i ? '#C9A96E' : 'rgba(255,255,255,0.4)',
+                    color: activeIndex === i ? '#B8862A' : 'rgba(255,255,255,0.4)',
                     letterSpacing: '-0.02em',
                     transition: 'color 0.3s',
                   }}
@@ -172,14 +172,14 @@ export default function DeploymentDomains() {
                   <motion.div
                     style={{
                       height: '2px',
-                      background: 'rgba(201,169,110,0.3)',
+                      background: 'rgba(184,134,42,0.3)',
                       marginTop: '12px',
                       borderRadius: '2px',
                       overflow: 'hidden',
                     }}
                   >
                     <motion.div
-                      style={{ height: '100%', background: '#C9A96E', borderRadius: '2px' }}
+                      style={{ height: '100%', background: '#B8862A', borderRadius: '2px' }}
                       initial={{ width: '0%' }}
                       animate={{ width: '100%' }}
                       transition={{ duration: 5, ease: 'linear' }}
@@ -204,7 +204,7 @@ export default function DeploymentDomains() {
                 {/* Platform label */}
                 <span
                   className="font-body font-semibold uppercase tracking-[0.15em]"
-                  style={{ fontSize: '11px', color: '#C9A96E' }}
+                  style={{ fontSize: '11px', color: '#B8862A' }}
                 >
                   {activeDomain.platform}
                 </span>

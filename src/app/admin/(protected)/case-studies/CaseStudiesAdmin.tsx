@@ -98,9 +98,9 @@ export default function CaseStudiesAdmin({ staticCaseStudies, dbRecords }: Props
                 <label htmlFor="cs-featured" style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', cursor: 'pointer' }}>Featured</label>
               </div>
             </div>
-            {message && <p style={{ marginTop: 12, fontSize: 12, color: '#C9A96E' }}>{message}</p>}
+            {message && <p style={{ marginTop: 12, fontSize: 12, color: '#B8862A' }}>{message}</p>}
             <div style={{ display: 'flex', gap: 10, marginTop: 24 }}>
-              <button onClick={handleSave} disabled={saving} style={{ flex: 1, padding: '11px', background: '#C9A96E', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+              <button onClick={handleSave} disabled={saving} style={{ flex: 1, padding: '11px', background: '#B8862A', color: '#1A1A2E', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {saving ? 'Saving...' : 'Save'}
               </button>
               <button onClick={() => setEditing(null)} style={{ padding: '11px 20px', background: 'transparent', color: 'rgba(255,255,255,0.4)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, fontSize: 13, cursor: 'pointer' }}>
@@ -120,7 +120,7 @@ export default function CaseStudiesAdmin({ staticCaseStudies, dbRecords }: Props
                 {sc.platform} · /{sc.slug} · {sc.period}
               </div>
             </div>
-            {db?.featured && <span style={{ fontSize: 10, padding: '1px 6px', background: 'rgba(201,169,110,0.15)', color: '#C9A96E', borderRadius: 4, fontWeight: 600, letterSpacing: '0.06em' }}>FEATURED</span>}
+            {db?.featured && <span style={{ fontSize: 10, padding: '1px 6px', background: 'rgba(184,134,42,0.15)', color: '#B8862A', borderRadius: 4, fontWeight: 600, letterSpacing: '0.06em' }}>FEATURED</span>}
             <StatusBadge status={db?.status ?? 'live'} />
             <button
               onClick={() => setEditing(db ?? { slug: sc.slug, platform: sc.platform as 'IRIS' | 'ASSAN', title: sc.name, status: 'live', featured: false, sort_order: i + 1 })}

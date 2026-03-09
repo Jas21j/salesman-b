@@ -49,7 +49,7 @@ export default function PrivacyPage() {
       {/* Header */}
       <section style={{ background: '#1E2A4A', padding: '140px 24px 80px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>LEGAL</span>
+          <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>LEGAL</span>
           <h1 className="font-display font-bold text-white mt-3" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', letterSpacing: '-0.03em', lineHeight: 1.05 }}>
             Privacy Policy
           </h1>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
           ))}
 
           <div style={{ marginTop: '60px', paddingTop: '32px', borderTop: '1px solid rgba(43,58,103,0.1)', display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-            <Link href="/legal/terms" className="font-body" style={{ fontSize: '14px', color: '#C9A96E', textDecoration: 'none' }}>
+            <Link href="/legal/terms" className="font-body" style={{ fontSize: '14px', color: '#B8862A', textDecoration: 'none' }}>
               Terms of Service →
             </Link>
             <Link href="/contact" className="font-body" style={{ fontSize: '14px', color: 'rgba(43,58,103,0.5)', textDecoration: 'none' }}>

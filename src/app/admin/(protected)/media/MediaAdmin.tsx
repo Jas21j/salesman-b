@@ -40,13 +40,13 @@ export default function MediaAdmin({ initialAssets }: Props) {
           <h1 style={{ fontFamily: 'var(--font-outfit)', fontSize: 24, fontWeight: 700, color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>Media Library</h1>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', margin: '4px 0 0' }}>Upload and manage assets</p>
         </div>
-        <label style={{ padding: '10px 20px', background: '#C9A96E', color: '#1A1A2E', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+        <label style={{ padding: '10px 20px', background: '#B8862A', color: '#1A1A2E', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
           {uploading ? 'Uploading...' : '+ Upload'}
           <input ref={fileRef} type="file" accept="image/*,video/*,.pdf,.svg" style={{ display: 'none' }} onChange={handleUpload} disabled={uploading} />
         </label>
       </div>
 
-      {message && <p style={{ fontSize: 13, color: '#C9A96E', marginBottom: 16 }}>{message}</p>}
+      {message && <p style={{ fontSize: 13, color: '#B8862A', marginBottom: 16 }}>{message}</p>}
 
       {assets.length === 0 ? (
         <div style={{ background: '#1A1A2E', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: 40, textAlign: 'center', color: 'rgba(255,255,255,0.3)', fontSize: 14 }}>

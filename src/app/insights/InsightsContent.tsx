@@ -28,7 +28,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E\")", backgroundRepeat: 'repeat', backgroundSize: '256px', pointerEvents: 'none', zIndex: 2 }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 3, padding: '160px 24px 80px', width: '100%' }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
-            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>OPERATIONAL INTELLIGENCE</span>
+            <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#B8862A' }}>OPERATIONAL INTELLIGENCE</span>
             <h1 className="font-display font-bold text-white mt-3" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>
               What the data tells us<br />about operational failure.
             </h1>
@@ -73,7 +73,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
                   )}
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                    <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#C9A96E' }}>
+                    <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#B8862A' }}>
                       {insight.tag}
                     </span>
                     <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(43,58,103,0.2)', flexShrink: 0 }} />
@@ -98,7 +98,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
                       style={{
                         display: 'inline-block',
                         background: '#1E2A4A',
-                        color: '#C9A96E',
+                        color: '#B8862A',
                         fontFamily: 'var(--font-inter)',
                         fontWeight: 600,
                         fontSize: '11px',
@@ -132,7 +132,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
 
           {/* Source methodology note */}
           {hasLiveData && (
-            <div style={{ marginTop: 48, padding: '20px 24px', background: 'rgba(43,58,103,0.04)', borderRadius: 10, borderLeft: '3px solid rgba(201,169,110,0.4)' }}>
+            <div style={{ marginTop: 48, padding: '20px 24px', background: 'rgba(43,58,103,0.04)', borderRadius: 10, borderLeft: '3px solid rgba(184,134,42,0.4)' }}>
               <p className="font-body" style={{ fontSize: '13px', color: 'rgba(43,58,103,0.5)', lineHeight: 1.6 }}>
                 Industry updates are sourced from global news intelligence feeds and refreshed hourly. Curated analysis reflects Salesman Solutions operational research.
               </p>
@@ -155,7 +155,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <Link
                 href="/contact"
-                style={{ background: '#C9A96E', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none', display: 'inline-block', letterSpacing: '0.01em' }}
+                style={{ background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none', display: 'inline-block', letterSpacing: '0.01em' }}
               >
                 START A CONVERSATION →
               </Link>

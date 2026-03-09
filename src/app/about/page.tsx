@@ -96,7 +96,7 @@ export default function AboutPage() {
             >
               <span
                 className="font-body font-semibold uppercase tracking-[0.15em]"
-                style={{ fontSize: '12px', color: '#C9A96E' }}
+                style={{ fontSize: '12px', color: '#B8862A' }}
               >
                 ABOUT SALESMAN SOLUTIONS
               </span>
@@ -159,7 +159,7 @@ export default function AboutPage() {
           >
             <span
               className="font-body font-semibold uppercase tracking-[0.15em]"
-              style={{ fontSize: '12px', color: '#C9A96E' }}
+              style={{ fontSize: '12px', color: '#B8862A' }}
             >
               FOUNDER TIMELINE
             </span>
@@ -203,7 +203,7 @@ export default function AboutPage() {
                       width: '12px',
                       height: '12px',
                       borderRadius: '50%',
-                      background: '#C9A96E',
+                      background: '#B8862A',
                       border: '2px solid #FDFBF7',
                     }}
                     initial={{ scale: 0 }}
@@ -218,7 +218,7 @@ export default function AboutPage() {
                     className="font-display font-bold select-none absolute"
                     style={{
                       fontSize: 'clamp(60px, 8vw, 100px)',
-                      color: 'rgba(201,169,110,0.07)',
+                      color: 'rgba(184,134,42,0.07)',
                       top: '-20px',
                       right: '0',
                       lineHeight: 1,
@@ -229,7 +229,7 @@ export default function AboutPage() {
 
                   <p
                     className="font-body font-semibold"
-                    style={{ fontSize: '13px', color: '#C9A96E', letterSpacing: '0.08em' }}
+                    style={{ fontSize: '13px', color: '#B8862A', letterSpacing: '0.08em' }}
                   >
                     {m.year}
                   </p>
@@ -262,7 +262,7 @@ export default function AboutPage() {
             transition={{ duration: 0.9 }}
           >
             <div
-              style={{ width: '48px', height: '3px', background: '#C9A96E', margin: '0 auto 40px', borderRadius: '2px' }}
+              style={{ width: '48px', height: '3px', background: '#B8862A', margin: '0 auto 40px', borderRadius: '2px' }}
             />
             <p
               className="font-display font-bold text-white"
@@ -271,7 +271,7 @@ export default function AboutPage() {
               &ldquo;To build the operational systems infrastructure that industries run on — not for a single market, but for the world.&rdquo;
             </p>
             <div
-              style={{ width: '48px', height: '3px', background: '#C9A96E', margin: '40px auto 0', borderRadius: '2px' }}
+              style={{ width: '48px', height: '3px', background: '#B8862A', margin: '40px auto 0', borderRadius: '2px' }}
             />
           </motion.div>
         </div>
@@ -288,7 +288,7 @@ export default function AboutPage() {
           >
             <span
               className="font-body font-semibold uppercase tracking-[0.15em]"
-              style={{ fontSize: '12px', color: '#C9A96E' }}
+              style={{ fontSize: '12px', color: '#B8862A' }}
             >
               PLATFORM PHILOSOPHY
             </span>
@@ -315,7 +315,7 @@ export default function AboutPage() {
               <Link
                 href="/solutions/iris"
                 style={{
-                  background: '#C9A96E',
+                  background: '#B8862A',
                   color: '#1E2A4A',
                   fontFamily: 'var(--font-inter)',
                   fontWeight: 600,
