@@ -3,3 +3,15 @@ __pycache__/
 .idea/
 .vscode/
 
+node_modules
+
+# Environment secrets
+.env.local
+.env.*.local
+
+# Supabase
+.supabase/
+
+# Next.js build output
+.next/
+out/

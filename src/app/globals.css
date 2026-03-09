@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  color: #1A1A2E;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* General: prevent horizontal overflow */
+img,
+video {
+  max-width: 100%;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(201, 169, 110, 0.3);
+  color: #1E2A4A;
+}
+
+/* ─────────────────────────────────────────────
+   ANTI-FOUC — Prevent flash of unstyled content
+   ───────────────────────────────────────────── */
+
+/*
+  During initial hydration, Framer Motion elements start at opacity:0.
+  Before JS runs, images paint immediately while text/UI are invisible.
+  Fix: while js-loading class is on <html>, disable CSS transitions and
+  force Framer-animated elements to their final state so SSR is always visible.
+*/
+.js-loading *,
+.js-loading *::before,
+.js-loading *::after {
+  transition-duration: 0ms !important;
+  animation-duration: 0ms !important;
+}
+
+.js-loading [style*="opacity: 0"],
+.js-loading [style*="opacity:0"] {
+  opacity: 1 !important;
+}
+
+.js-loading [style*="transform: translateY"],
+.js-loading [style*="translateY"] {
+  transform: none !important;
+}
+
+/* ── Text Outline (Hero) ── */
+.text-outline {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .text-outline {
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* ── Glass Dark (Doctrine cards — approved exception) ── */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-dark:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ── Gold top border card ── */
+.navy-card {
+  background: #2B3A67;
+  border-top: 3px solid #C9A96E;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.navy-card-deep {
+  background: #1E2A4A;
+  border-top: 3px solid #C9A96E;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Ghost numeral ── */
+.ghost-numeral {
+  position: absolute;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  font-size: clamp(80px, 12vw, 140px);
+  font-weight: 800;
+  color: rgba(201, 169, 110, 0.15);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Grain overlay ── */
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Dot grid ── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(43, 58, 103, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Nav link underline ── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #C9A96E;
+  transition: width 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ── Scroll indicator ── */
+@keyframes bounceChevron {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+.scroll-chevron {
+  animation: bounceChevron 2s ease-in-out infinite;
+}
+
+/* ── Progress rail (case studies) ── */
+.progress-rail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(201, 169, 110, 0.15);
+  z-index: 40;
+}
+
+/* ── Button / link focus ── */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #C9A96E;
+  outline-offset: 3px;
+}
+
+/* ── Stat divider ── */
+.stat-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  align-self: stretch;
+}
+
+@media (max-width: 640px) {
+  .stat-divider {
+    display: none;
+  }
+}
+
+/* =============================================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS
+   Breakpoints: 360 | 480 | 540 | 640 | 768 | 900 | 1024
+   ============================================================= */
+
+/* ── Statistics grid: 2-col on ≤640px, 1-col on ≤380px ── */
+@media (max-width: 640px) {
+  .stats-mosaic {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .stats-spacer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .stats-mosaic {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Hero: tighter padding on mobile so content clears nav pill ── */
+.hero-section-pad {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 640px) {
+  .hero-section-pad {
+    padding-top: 110px !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+/* ── CTA buttons: stack vertically on ≤480px ── */
+.cta-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .cta-group {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .cta-group a {
+    width: 100% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ── Two-column grids: stack on ≤768px ── */
+@media (max-width: 768px) {
+  .two-col-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Three-column grids: 2-col on tablet, 1-col on mobile ── */
+@media (max-width: 900px) {
+  .three-col-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .three-col-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Deployment Domains tab/content layout: stack on mobile ── */
+@media (max-width: 640px) {
+  .flex-col-on-mobile {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Platform Architecture cards: reduce padding on mobile ── */
+@media (max-width: 768px) {
+  .platform-cards {
+    flex-direction: column !important;
+  }
+}
+
+/* ── Founder block grid: tighter gap on mobile ── */
+@media (max-width: 640px) {
+  .founder-gap-mobile {
+    gap: 40px !important;
+  }
+}
+
+/* ── Section horizontal padding on very small screens ── */
+@media (max-width: 400px) {
+  .section-px-mobile {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ── Section vertical padding reduction on mobile for all sections ── */
+@media (max-width: 640px) {
+  .section-pad-mobile {
+    padding-top: 72px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+/* ── Footer grid: responsive columns ── */
+@media (max-width: 640px) {
+  .footer-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-cols {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Case study images: shorter on mobile ── */
+@media (max-width: 640px) {
+  .case-study-image {
+    height: 220px !important;
+  }
+}
+
+/* ── Pull quotes: tighter padding on mobile ── */
+@media (max-width: 640px) {
+  .pull-quote-mobile {
+    padding: 28px 20px !important;
+  }
+}
+
+/* ── Insights header image: shorter on mobile ── */
+@media (max-width: 640px) {
+  .insights-header-image {
+    height: 200px !important;
+  }
+}
+
+/* ── Platform cards divider: hide on mobile ── */
+@media (max-width: 768px) {
+  .platform-divider {
+    display: none !important;
+  }
+}
+
+/* ── Nav pill: tighter on very small screens ── */
+@media (max-width: 400px) {
+  .nav-pill {
+    width: calc(100% - 20px) !important;
+  }
+}
+
+/* ── H1 hero font guardrail on very small phones ── */
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* ── Safari mobile: aspect-ratio fallback ── */
+@supports not (aspect-ratio: 3/4) {
+  .card-aspect {
+    padding-bottom: 133%;
+    height: 0;
+    position: relative;
+  }
+
+  .card-aspect>* {
+    position: absolute;
+    inset: 0;
+  }
+}

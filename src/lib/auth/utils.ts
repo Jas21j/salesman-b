@@ -1,0 +1,29 @@
+import type { SupabaseClient } from '@supabase/supabase-js'
+
+const ALLOWED_USERNAME = process.env.ALLOWED_GITHUB_USERNAME ?? 'jas21j'
+
+/**
+ * Checks whether the currently authenticated user is the authorized admin.
+ * Validates against the GitHub username stored in user metadata.
+ */
+export async function isAuthorizedAdmin(supabase: SupabaseClient): Promise<boolean> {
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser()
+
+  if (error || !user) return false
+
+  const githubUsername: string | undefined = user.user_metadata?.user_name
+  return githubUsername === ALLOWED_USERNAME
+}
+
+/**
+ * Returns the current session user, or null if unauthenticated.
+ */
+export async function getAdminUser(supabase: SupabaseClient) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+  return user
+}
