@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Outfit, Inter, Cormorant_Garamond } from 'next/font/google'
+import { Outfit, Inter } from 'next/font/google'
 import './globals.css'
 import LayoutWrapper from '@/components/LayoutWrapper'
 
@@ -19,13 +19,6 @@ const inter = Inter({
   preload: true,
 })
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-cormorant',
-  display: 'swap',
-  preload: true,
-})
 
 export const metadata: Metadata = {
   title: 'Salesman Solutions — Global Venture Platform',
@@ -46,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <head>
         {/*
           Anti-FOUC inline script:
