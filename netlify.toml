@@ -2,5 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "ALLOWED_GITHUB_USERNAME,GNEWS_API_KEY,THE_NEWS_API_TOKEN,SUPABASE_SERVICE_ROLE_KEY,REVALIDATE_SECRET"
+  SECRETS_SCAN_OMIT_PATHS = ".next/server"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"

@@ -6,8 +6,12 @@ __pycache__/
 node_modules
 
 # Environment secrets
+.env
+.env.*
 .env.local
 .env.*.local
+*.env
+Resources/Variable.env
 
 # Supabase
 .supabase/
