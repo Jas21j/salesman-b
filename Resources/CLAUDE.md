@@ -360,7 +360,7 @@ Phase 2 is complete. It added the operational backbone: private admin control la
 
 | Feature | Status |
 |---|---|
-| GitHub OAuth admin auth (jas21j only) | ✅ Live |
+| GitHub OAuth admin auth (env-configured username only) | ✅ Live |
 | `/admin` private shell with 7 sections | ✅ Live |
 | Supabase database (7 tables) | ✅ Schema written |
 | Publish-state system (draft/scheduled/live/archived) | ✅ Live |
@@ -378,7 +378,7 @@ Phase 2 is complete. It added the operational backbone: private admin control la
 ### URL and Access
 - Admin URL: `/admin`
 - Authentication: GitHub OAuth via Supabase Auth
-- Authorized user: GitHub username `jas21j` only
+- Authorized user: GitHub username defined by `ALLOWED_GITHUB_USERNAME` env var only
 - Auth flow: `/admin/login` → GitHub OAuth → `/api/auth/callback` → validates username → `/admin` or `/admin/unauthorized`
 
 ### Admin Sections
@@ -395,7 +395,7 @@ Phase 2 is complete. It added the operational backbone: private admin control la
 
 ### Auth Architecture
 - `middleware.ts` (project root): Intercepts all `/admin/*` routes, refreshes Supabase session, redirects unauthenticated requests to `/admin/login`
-- `src/lib/auth/utils.ts`: `isAuthorizedAdmin(supabase)` validates `user.user_metadata.user_name === 'jas21j'`
+- `src/lib/auth/utils.ts`: `isAuthorizedAdmin(supabase)` validates `user.user_metadata.user_name` against `ALLOWED_GITHUB_USERNAME` env var
 - `src/app/admin/(protected)/layout.tsx`: Validates `isAuthorizedAdmin` as a layout-level guard — all protected routes share this auth check
 - `src/app/admin/login/page.tsx`: Client-side OAuth via `@supabase/ssr` browser client — handles redirect to GitHub, error states, and loading feedback
 - `src/components/LayoutWrapper.tsx`: Client component wrapping root layout — conditionally hides public Navigation + Footer on `/admin` routes
@@ -542,7 +542,7 @@ If tiers 1 and 2 both return empty, tier 3 is displayed automatically.
 | `THE_NEWS_API_TOKEN` | TheNewsAPI token — **server only** |
 | `GNEWS_API_KEY` | GNews API key — **server only** |
 | `REVALIDATE_SECRET` | Random 32-char string for webhook revalidation |
-| `ALLOWED_GITHUB_USERNAME` | `jas21j` — the only authorized admin GitHub username |
+| `ALLOWED_GITHUB_USERNAME` | The authorized admin GitHub username — set via Netlify env var, never hardcode |
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` (local) or `https://salesmansolutions.net` (prod) |
 
 ### Production (Vercel)
