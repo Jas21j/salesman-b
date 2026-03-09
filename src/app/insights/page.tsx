@@ -1,11 +1,9 @@
-import { createClient } from '@/lib/supabase/server'
-import { fetchLiveInsights } from '@/lib/db/queries'
+import { isSupabaseConfigured } from '@/lib/supabase/server'
 import { fetchNewsArticles } from '@/lib/news/fetcher'
 import type { InsightItem } from './fallback'
 import { FALLBACK_INSIGHTS } from './fallback'
 import InsightsContent from './InsightsContent'
 
-// Revalidate every hour
 export const revalidate = 3600
 
 function curatedToInsightItem(insight: {
@@ -72,15 +70,27 @@ function newsToInsightItem(article: {
 }
 
 export default async function InsightsPage() {
-  const supabase = await createClient()
+  let curated: InsightItem[] = []
+  let news: InsightItem[] = []
 
-  const [curatedRaw, newsRaw] = await Promise.all([
-    fetchLiveInsights(supabase, 6).catch(() => []),
-    fetchNewsArticles(10).catch(() => []),
-  ])
+  try {
+    if (isSupabaseConfigured()) {
+      const { createClient } = await import('@/lib/supabase/server')
+      const { fetchLiveInsights } = await import('@/lib/db/queries')
+      const supabase = await createClient()
+      const curatedRaw = await fetchLiveInsights(supabase, 6).catch(() => [])
+      curated = curatedRaw.map(curatedToInsightItem)
+    }
+  } catch {
+    // Supabase not available — continue with news API only
+  }
 
-  const curated: InsightItem[] = curatedRaw.map(curatedToInsightItem)
-  const news: InsightItem[] = newsRaw.map(newsToInsightItem)
+  try {
+    const newsRaw = await fetchNewsArticles(10).catch(() => [])
+    news = newsRaw.map(newsToInsightItem)
+  } catch {
+    // News API not available
+  }
 
   const combined = [...curated, ...news]
 

@@ -9,36 +9,43 @@ import FounderBlock from '@/components/home/FounderBlock'
 import Statistics from '@/components/home/Statistics'
 import Insights from '@/components/home/Insights'
 import CTABand from '@/components/home/CTABand'
-import { createClient } from '@/lib/supabase/server'
-import { fetchFeaturedInsights } from '@/lib/db/queries'
+import { isSupabaseConfigured } from '@/lib/supabase/server'
 import { fetchNewsArticles } from '@/lib/news/fetcher'
 
-// Revalidate homepage every 6 hours
 export const revalidate = 21600
 
 async function fetchHomeData() {
   try {
-    const supabase = await createClient()
-    const [curated, news] = await Promise.all([
-      fetchFeaturedInsights(supabase, 3).catch(() => []),
-      fetchNewsArticles(10).catch(() => []),
-    ])
+    let insightsPreview: { tag: string; title: string; body: string; source: string }[] = []
 
-    const curatedMapped = curated.map(i => ({
-      tag: i.category ?? 'OPERATIONAL INTELLIGENCE',
-      title: i.title,
-      body: i.summary ?? '',
-      source: i.source_name ?? 'Salesman Solutions Research',
-    }))
+    if (isSupabaseConfigured()) {
+      try {
+        const { createClient } = await import('@/lib/supabase/server')
+        const { fetchFeaturedInsights } = await import('@/lib/db/queries')
+        const supabase = await createClient()
+        const curated = await fetchFeaturedInsights(supabase, 3).catch(() => [])
+        insightsPreview = curated.map(i => ({
+          tag: i.category ?? 'OPERATIONAL INTELLIGENCE',
+          title: i.title,
+          body: i.summary ?? '',
+          source: i.source_name ?? 'Salesman Solutions Research',
+        }))
+      } catch {
+        // Supabase not available
+      }
+    }
 
-    const newsMapped = news.slice(0, Math.max(0, 3 - curatedMapped.length)).map(a => ({
-      tag: 'OPERATIONAL INTELLIGENCE',
-      title: a.title,
-      body: a.summary,
-      source: a.source,
-    }))
+    const news = await fetchNewsArticles(10).catch(() => [])
 
-    const insightsPreview = [...curatedMapped, ...newsMapped].slice(0, 3)
+    if (insightsPreview.length < 3) {
+      const newsMapped = news.slice(0, Math.max(0, 3 - insightsPreview.length)).map(a => ({
+        tag: 'OPERATIONAL INTELLIGENCE',
+        title: a.title,
+        body: a.summary,
+        source: a.source,
+      }))
+      insightsPreview = [...insightsPreview, ...newsMapped].slice(0, 3)
+    }
 
     const tickerArticles = news.slice(0, 6).map(a => ({
       title: a.title,
@@ -69,7 +76,6 @@ export default async function HomePage() {
       <FounderBlock />
       <Statistics />
       <Insights articles={insightsPreview.length > 0 ? insightsPreview : undefined} />
-
       <CTABand />
     </>
   )

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import type { InsightItem } from './fallback'
@@ -12,10 +13,20 @@ type Props = {
 export default function InsightsContent({ insights, hasLiveData }: Props) {
   return (
     <>
-      {/* Hero */}
-      <section style={{ background: '#1E2A4A', padding: '160px 24px 100px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E\")", backgroundRepeat: 'repeat', backgroundSize: '256px', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      {/* Hero with background image */}
+      <section style={{ position: 'relative', overflow: 'hidden', minHeight: '480px', display: 'flex', alignItems: 'flex-end' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Image
+            src="/operational-intelligence.webp"
+            alt=""
+            fill
+            priority
+            style={{ objectFit: 'cover', objectPosition: 'center 40%' }}
+          />
+        </div>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,74,0.95) 0%, rgba(30,42,74,0.7) 50%, rgba(30,42,74,0.4) 100%)', zIndex: 1 }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E\")", backgroundRepeat: 'repeat', backgroundSize: '256px', pointerEvents: 'none', zIndex: 2 }} />
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 3, padding: '160px 24px 80px', width: '100%' }}>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }}>
             <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '12px', color: '#C9A96E' }}>OPERATIONAL INTELLIGENCE</span>
             <h1 className="font-display font-bold text-white mt-3" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.04em', lineHeight: 0.95 }}>

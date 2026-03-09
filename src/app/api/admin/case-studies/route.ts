@@ -1,27 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { isAuthorizedAdmin } from '@/lib/auth/utils'
-import { adminUpsertCaseStudy, adminWriteLog } from '@/lib/db/queries'
+import { isSupabaseConfigured, isServiceRoleConfigured } from '@/lib/supabase/server'
 
 async function checkAuth() {
-  return isAuthorizedAdmin(await createClient())
+  if (!isSupabaseConfigured()) return false
+  try {
+    const { createClient } = await import('@/lib/supabase/server')
+    const { isAuthorizedAdmin } = await import('@/lib/auth/utils')
+    return await isAuthorizedAdmin(await createClient())
+  } catch { return false }
 }
 
 export async function POST(req: NextRequest) {
   if (!(await checkAuth())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const body = await req.json()
-  const svc = createServiceClient()
-  const saved = await adminUpsertCaseStudy(svc, body)
-  await adminWriteLog(svc, 'create_case_study', 'case_studies', saved?.id)
-  return NextResponse.json(saved)
+  if (!isServiceRoleConfigured()) return NextResponse.json({ error: 'Service role not configured' }, { status: 500 })
+  try {
+    const { createServiceClient } = await import('@/lib/supabase/server')
+    const { adminUpsertCaseStudy, adminWriteLog } = await import('@/lib/db/queries')
+    const body = await req.json()
+    const svc = createServiceClient()
+    const saved = await adminUpsertCaseStudy(svc, body)
+    await adminWriteLog(svc, 'create_case_study', 'case_studies', saved?.id)
+    return NextResponse.json(saved)
+  } catch (e) { return NextResponse.json({ error: String(e) }, { status: 500 }) }
 }
 
 export async function PUT(req: NextRequest) {
   if (!(await checkAuth())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  const body = await req.json()
-  if (!body.id) return NextResponse.json({ error: 'Missing id' }, { status: 400 })
-  const svc = createServiceClient()
-  const saved = await adminUpsertCaseStudy(svc, body)
-  await adminWriteLog(svc, 'update_case_study', 'case_studies', saved?.id)
-  return NextResponse.json(saved)
+  if (!isServiceRoleConfigured()) return NextResponse.json({ error: 'Service role not configured' }, { status: 500 })
+  try {
+    const { createServiceClient } = await import('@/lib/supabase/server')
+    const { adminUpsertCaseStudy, adminWriteLog } = await import('@/lib/db/queries')
+    const body = await req.json()
+    if (!body.id) return NextResponse.json({ error: 'Missing id' }, { status: 400 })
+    const svc = createServiceClient()
+    const saved = await adminUpsertCaseStudy(svc, body)
+    await adminWriteLog(svc, 'update_case_study', 'case_studies', saved?.id)
+    return NextResponse.json(saved)
+  } catch (e) { return NextResponse.json({ error: String(e) }, { status: 500 }) }
 }

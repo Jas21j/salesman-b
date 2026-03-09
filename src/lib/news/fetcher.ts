@@ -19,7 +19,7 @@ async function fetchFromTheNewsAPI(limit: number): Promise<NewsArticle[]> {
   url.searchParams.set('api_token', token)
   url.searchParams.set('search', SEARCH_QUERY)
   url.searchParams.set('language', 'en')
-  url.searchParams.set('limit', String(Math.min(limit * 2, 10)))
+  url.searchParams.set('limit', String(Math.min(limit * 2, 20)))
   url.searchParams.set('sort', 'published_at')
 
   const res = await fetch(url.toString(), {
@@ -41,6 +41,7 @@ async function fetchFromGNews(limit: number): Promise<NewsArticle[]> {
   url.searchParams.set('lang', 'en')
   url.searchParams.set('token', token)
   url.searchParams.set('max', String(Math.min(limit * 2, 10)))
+  url.searchParams.set('expand', 'content')
   url.searchParams.set('sortby', 'publishedAt')
 
   const res = await fetch(url.toString(), {

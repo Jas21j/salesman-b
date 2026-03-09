@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
-import { createClient } from '@/lib/supabase/server'
-import { isAuthorizedAdmin } from '@/lib/auth/utils'
+import { isSupabaseConfigured } from '@/lib/supabase/server'
 
 const VALID_PATHS = ['/', '/insights', '/solutions', '/solutions/iris', '/solutions/assan', '/case-studies']
 
 export async function POST(req: NextRequest) {
-  // Validate session — admin only
-  if (!(await isAuthorizedAdmin(await createClient()))) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  if (!isSupabaseConfigured()) {
+    return NextResponse.json({ error: 'Not configured' }, { status: 500 })
+  }
+
+  try {
+    const { createClient } = await import('@/lib/supabase/server')
+    const { isAuthorizedAdmin } = await import('@/lib/auth/utils')
+    if (!(await isAuthorizedAdmin(await createClient()))) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+  } catch {
+    return NextResponse.json({ error: 'Auth failed' }, { status: 401 })
   }
 
   const body = await req.json().catch(() => ({}))

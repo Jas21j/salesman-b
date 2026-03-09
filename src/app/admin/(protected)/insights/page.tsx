@@ -1,8 +1,16 @@
-import { createServiceClient } from '@/lib/supabase/server'
-import { adminFetchInsights } from '@/lib/db/queries'
+import { isServiceRoleConfigured } from '@/lib/supabase/server'
 import InsightsAdmin from './InsightsAdmin'
 
 export default async function AdminInsightsPage() {
-  const insights = await adminFetchInsights(createServiceClient()).catch(() => [])
-  return <InsightsAdmin initialInsights={insights} />
+  if (!isServiceRoleConfigured()) {
+    return <InsightsAdmin initialInsights={[]} />
+  }
+  try {
+    const { createServiceClient } = await import('@/lib/supabase/server')
+    const { adminFetchInsights } = await import('@/lib/db/queries')
+    const insights = await adminFetchInsights(createServiceClient()).catch(() => [])
+    return <InsightsAdmin initialInsights={insights} />
+  } catch {
+    return <InsightsAdmin initialInsights={[]} />
+  }
 }

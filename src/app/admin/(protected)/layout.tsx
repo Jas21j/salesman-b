@@ -1,6 +1,5 @@
 import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
-import { isAuthorizedAdmin } from '@/lib/auth/utils'
+import { isSupabaseConfigured } from '@/lib/supabase/server'
 import AdminSidebar from '../components/AdminSidebar'
 import AdminTopBar from '../components/AdminTopBar'
 
@@ -14,10 +13,20 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = await createClient()
-  const authorized = await isAuthorizedAdmin(supabase)
+  if (!isSupabaseConfigured()) {
+    redirect('/admin/login')
+  }
 
-  if (!authorized) {
+  try {
+    const { createClient } = await import('@/lib/supabase/server')
+    const { isAuthorizedAdmin } = await import('@/lib/auth/utils')
+    const supabase = await createClient()
+    const authorized = await isAuthorizedAdmin(supabase)
+
+    if (!authorized) {
+      redirect('/admin/login')
+    }
+  } catch {
     redirect('/admin/login')
   }
 

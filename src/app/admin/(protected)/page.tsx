@@ -1,13 +1,25 @@
 import Link from 'next/link'
-import { createServiceClient } from '@/lib/supabase/server'
-import { adminFetchStatusCounts, adminFetchLogs } from '@/lib/db/queries'
+import { isServiceRoleConfigured } from '@/lib/supabase/server'
 
 export default async function AdminDashboard() {
-  const serviceClient = createServiceClient()
-  const [counts, recentLogs] = await Promise.all([
-    adminFetchStatusCounts(serviceClient).catch(() => null),
-    adminFetchLogs(serviceClient, 10).catch(() => []),
-  ])
+  let counts: { insights: Record<string, number>; solutions: Record<string, number>; case_studies: Record<string, number> } | null = null
+  let recentLogs: { id: string; action: string; entity_type: string | null; created_at: string }[] = []
+
+  if (isServiceRoleConfigured()) {
+    try {
+      const { createServiceClient } = await import('@/lib/supabase/server')
+      const { adminFetchStatusCounts, adminFetchLogs } = await import('@/lib/db/queries')
+      const serviceClient = createServiceClient()
+      const [c, l] = await Promise.all([
+        adminFetchStatusCounts(serviceClient).catch(() => null),
+        adminFetchLogs(serviceClient, 10).catch(() => []),
+      ])
+      counts = c
+      recentLogs = l
+    } catch {
+      // Service client not available
+    }
+  }
 
   const sections = [
     { label: 'Insights', counts: counts?.insights },
@@ -42,7 +54,14 @@ export default async function AdminDashboard() {
         Salesman Solutions content control center
       </p>
 
-      {/* Status counts */}
+      {!isServiceRoleConfigured() && (
+        <div style={{ background: 'rgba(220,38,38,0.1)', border: '1px solid rgba(220,38,38,0.2)', borderRadius: 10, padding: '16px 20px', marginBottom: 24 }}>
+          <p style={{ fontSize: 13, color: 'rgba(255,100,100,0.9)', lineHeight: 1.6 }}>
+            <strong>Configuration required:</strong> The SUPABASE_SERVICE_ROLE_KEY environment variable is not set. Add it to your Netlify environment variables to enable database operations.
+          </p>
+        </div>
+      )}
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16, marginBottom: 40 }}>
         {sections.map(({ label, counts: c }) => (
           <div
@@ -61,7 +80,7 @@ export default async function AdminDashboard() {
               {(['live', 'draft', 'scheduled', 'archived'] as const).map((status) => (
                 <div key={status}>
                   <div style={{ fontSize: 22, fontWeight: 700, color: '#fff', fontFamily: 'var(--font-outfit)' }}>
-                    {c ? c[status] : '—'}
+                    {c ? (c as Record<string, number>)[status] : '—'}
                   </div>
                   <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', textTransform: 'capitalize' }}>
                     {status}
@@ -74,7 +93,6 @@ export default async function AdminDashboard() {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-        {/* Quick links */}
         <div>
           <h2 style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 16px' }}>
             Quick Links
@@ -101,7 +119,6 @@ export default async function AdminDashboard() {
           </div>
         </div>
 
-        {/* Recent activity */}
         <div>
           <h2 style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 16px' }}>
             Recent Activity
