@@ -315,7 +315,7 @@ export default function AboutPage() {
               <Link
                 href="/solutions/iris"
                 style={{
-                  background: '#B8862A',
+                  background: '#E8B040',
                   color: '#1E2A4A',
                   fontFamily: 'var(--font-inter)',
                   fontWeight: 600,

@@ -155,7 +155,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <Link
                 href="/contact"
-                style={{ background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none', display: 'inline-block', letterSpacing: '0.01em' }}
+                style={{ background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none', display: 'inline-block', letterSpacing: '0.01em' }}
               >
                 START A CONVERSATION →
               </Link>

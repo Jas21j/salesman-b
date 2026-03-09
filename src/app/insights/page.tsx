@@ -1,8 +1,19 @@
+import type { Metadata } from 'next'
 import { isSupabaseConfigured } from '@/lib/supabase/server'
 import { fetchNewsArticles } from '@/lib/news/fetcher'
 import type { InsightItem } from './fallback'
 import { FALLBACK_INSIGHTS } from './fallback'
 import InsightsContent from './InsightsContent'
+
+export const metadata: Metadata = {
+  title: 'Insights',
+  description:
+    'Operational intelligence and industry analysis from Salesman Solutions. Stay informed on digital transformation, logistics innovation, property technology, and systems thinking.',
+  openGraph: {
+    title: 'Insights — Salesman Solutions',
+    description: 'Industry signals and operational intelligence curated by Salesman Solutions.',
+  },
+}
 
 export const revalidate = 3600
 

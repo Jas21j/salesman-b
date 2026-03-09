@@ -118,7 +118,7 @@ export default function IRISPage() {
           <p className="font-body font-light mt-4" style={{ fontSize: '17px', color: 'rgba(255,255,255,0.55)' }}>
             IRIS engagements start with a scoping conversation.
           </p>
-          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
+          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
             Start a Conversation →
           </a>
         </motion.div>

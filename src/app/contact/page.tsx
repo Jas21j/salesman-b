@@ -143,8 +143,8 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  style={{ background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 36px', borderRadius: '9999px', border: 'none', cursor: 'pointer', transition: 'transform 0.3s, box-shadow 0.3s', alignSelf: 'flex-start' }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(184,134,42,0.3)' }}
+                  style={{ background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 36px', borderRadius: '9999px', border: 'none', cursor: 'pointer', transition: 'transform 0.3s, box-shadow 0.3s', alignSelf: 'flex-start' }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(232,176,64,0.4)' }}
                   onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
                 >
                   Send Message →

@@ -193,7 +193,7 @@ export default function CaseStudyContent({ slug }: { slug: string }) {
           <div style={{ textAlign: 'center' }}>
             <a
               href="mailto:JaheimSalesman@gmail.com"
-              style={{ display: 'inline-block', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '18px 44px', borderRadius: '9999px', textDecoration: 'none' }}
+              style={{ display: 'inline-block', background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '18px 44px', borderRadius: '9999px', textDecoration: 'none' }}
             >
               Start a Similar Project →
             </a>

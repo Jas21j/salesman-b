@@ -125,7 +125,7 @@ export default function CTABand() {
             <a
               href="mailto:JaheimSalesman@gmail.com"
               style={{
-                background: '#B8862A',
+                background: '#E8B040',
                 color: '#1E2A4A',
                 fontFamily: 'var(--font-inter)',
                 fontWeight: 600,
@@ -139,7 +139,7 @@ export default function CTABand() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 12px 35px rgba(184,134,42,0.35)'
+                e.currentTarget.style.boxShadow = '0 12px 35px rgba(232,176,64,0.4)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = ''

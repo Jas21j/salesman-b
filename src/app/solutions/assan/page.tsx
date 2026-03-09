@@ -113,7 +113,7 @@ export default function ASSANPage() {
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <h2 className="font-display font-bold text-white" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', letterSpacing: '-0.03em' }}>Ready to deploy operational systems?</h2>
           <p className="font-body font-light mt-4" style={{ fontSize: '17px', color: 'rgba(255,255,255,0.55)' }}>ASSAN engagements begin with an operational assessment.</p>
-          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
+          <a href="mailto:JaheimSalesman@gmail.com" style={{ display: 'inline-block', marginTop: '32px', background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '15px', padding: '16px 40px', borderRadius: '9999px', textDecoration: 'none' }}>
             Start a Conversation →
           </a>
         </motion.div>

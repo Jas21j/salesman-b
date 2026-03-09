@@ -135,7 +135,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <motion.span
           className="font-body font-semibold uppercase tracking-widest block mb-6"
-          style={{ fontSize: '12px', color: '#B8862A', letterSpacing: '0.18em' }}
+          style={{ fontSize: '12px', color: '#E8B040', letterSpacing: '0.18em' }}
           initial={mounted ? { opacity: 0, y: 20 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
@@ -246,7 +246,7 @@ export default function Hero() {
           <Link
             href="/solutions"
             style={{
-              background: '#B8862A',
+              background: '#E8B040',
               color: '#1E2A4A',
               fontFamily: 'var(--font-inter)',
               fontWeight: 600,
@@ -260,7 +260,7 @@ export default function Hero() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-2px)'
-              e.currentTarget.style.boxShadow = '0 12px 35px rgba(184,134,42,0.35)'
+              e.currentTarget.style.boxShadow = '0 12px 35px rgba(232,176,64,0.4)'
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = ''

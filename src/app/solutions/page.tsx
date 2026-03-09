@@ -80,7 +80,7 @@ export default function SolutionsPage() {
             <div style={{ marginTop: '36px' }}>
               <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '11px', color: '#B8862A' }}>OPTIMIZATIONS</span>
             </div>
-            <Link href="/solutions/iris" style={{ display: 'inline-block', marginTop: '24px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <Link href="/solutions/iris" style={{ display: 'inline-block', marginTop: '24px', background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
               Explore IRIS →
             </Link>
           </motion.div>
@@ -114,7 +114,7 @@ export default function SolutionsPage() {
             <div style={{ marginTop: '36px' }}>
               <span className="font-body font-semibold uppercase tracking-[0.15em]" style={{ fontSize: '11px', color: '#B8862A' }}>OPERATIONS</span>
             </div>
-            <Link href="/solutions/assan" style={{ display: 'inline-block', marginTop: '24px', background: '#B8862A', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <Link href="/solutions/assan" style={{ display: 'inline-block', marginTop: '24px', background: '#E8B040', color: '#1E2A4A', fontFamily: 'var(--font-inter)', fontWeight: 600, fontSize: '14px', padding: '14px 32px', borderRadius: '9999px', textDecoration: 'none' }}>
               Explore ASSAN →
             </Link>
           </motion.div>

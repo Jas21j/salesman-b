@@ -1,0 +1,17 @@
+{
+  "name": "Salesman Solutions",
+  "short_name": "Salesman",
+  "description": "Global venture platform building operational systems that improve industries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E2A4A",
+  "theme_color": "#1E2A4A",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
