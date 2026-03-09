@@ -11,7 +11,9 @@ node_modules
 .env.local
 .env.*.local
 *.env
-Resources/Variable.env
+
+# Resources / assets / docs (not needed to run the site)
+Resources/
 
 # Supabase
 .supabase/
