@@ -61,6 +61,12 @@ video {
   transform: none !important;
 }
 
+/* ── Hero viewport height — full screen on mobile and desktop ── */
+.hero-viewport {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 /* ── Text Outline (Hero) ── */
 .text-outline {
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
@@ -231,13 +237,20 @@ a:focus-visible {
 /* ── Hero: tighter padding on mobile so content clears nav pill ── */
 .hero-section-pad {
   padding-top: 120px;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
 @media (max-width: 640px) {
   .hero-section-pad {
-    padding-top: 110px !important;
-    padding-bottom: 64px !important;
+    padding-top: 100px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section-pad {
+    padding-top: 90px !important;
+    padding-bottom: 40px !important;
   }
 }
 

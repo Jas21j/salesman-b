@@ -19,10 +19,10 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${origin}/admin/login`)
   }
 
-  // Validate GitHub username
+  // Validate GitHub username (case-insensitive — GitHub usernames are case-insensitive)
   const githubUsername: string | undefined = data.user.user_metadata?.user_name
 
-  if (githubUsername !== ALLOWED_USERNAME) {
+  if (!githubUsername || githubUsername.toLowerCase() !== ALLOWED_USERNAME.toLowerCase()) {
     // Sign out the unauthorized user immediately
     await supabase.auth.signOut()
     return NextResponse.redirect(`${origin}/admin/unauthorized`)

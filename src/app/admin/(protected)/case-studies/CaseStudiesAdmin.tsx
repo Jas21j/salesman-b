@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import type { CaseStudyRecord, ContentStatus } from '@/lib/db/types'
 import type { CaseStudy } from '@/data/caseStudies'
-import StatusBadge from '../components/StatusBadge'
+import StatusBadge from '../../components/StatusBadge'
 
 type Props = {
   staticCaseStudies: CaseStudy[]

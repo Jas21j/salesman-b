@@ -48,8 +48,19 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
                   borderBottom: i < insights.length - 1 ? '1px solid rgba(43,58,103,0.1)' : 'none',
                 }}
               >
-                {/* Left — meta */}
+                {/* Left — meta + image */}
                 <div>
+                  {insight.image && (
+                    <div style={{ marginBottom: 20, borderRadius: 14, overflow: 'hidden', position: 'relative', height: 200 }}>
+                      <img
+                        src={insight.image}
+                        alt=""
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,74,0.2) 0%, transparent 50%)', borderRadius: 14 }} />
+                    </div>
+                  )}
+
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
                     <span className="font-body font-semibold uppercase tracking-[0.12em]" style={{ fontSize: '11px', color: '#C9A96E' }}>
                       {insight.tag}
@@ -99,7 +110,7 @@ export default function InsightsContent({ insights, hasLiveData }: Props) {
                   ))}
 
                   <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid rgba(43,58,103,0.08)' }}>
-                    <p className="font-body" style={{ fontSize: '12px', color: 'rgba(43,58,103,0.4)', fontStyle: 'italic' }}>
+                    <p className="font-body" style={{ fontSize: '12px', color: 'rgba(43,58,103,0.4)' }}>
                       Source: {insight.source}
                     </p>
                   </div>

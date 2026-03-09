@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { Solution, ContentStatus } from '@/lib/db/types'
-import StatusBadge from '../components/StatusBadge'
+import StatusBadge from '../../components/StatusBadge'
 
 type Props = { initialSolutions: Solution[] }
 

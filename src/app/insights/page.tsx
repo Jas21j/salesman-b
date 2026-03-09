@@ -39,6 +39,7 @@ function newsToInsightItem(article: {
   source: string
   url: string
   publishedAt: string
+  image?: string
 }): InsightItem {
   const text = (article.title + ' ' + article.summary).toLowerCase()
   const platform =
@@ -66,6 +67,7 @@ function newsToInsightItem(article: {
     platform,
     url: article.url,
     isExternal: true,
+    image: article.image,
   }
 }
 
@@ -73,8 +75,8 @@ export default async function InsightsPage() {
   const supabase = await createClient()
 
   const [curatedRaw, newsRaw] = await Promise.all([
-    fetchLiveInsights(supabase, 4).catch(() => []),
-    fetchNewsArticles(6).catch(() => []),
+    fetchLiveInsights(supabase, 6).catch(() => []),
+    fetchNewsArticles(10).catch(() => []),
   ])
 
   const curated: InsightItem[] = curatedRaw.map(curatedToInsightItem)
@@ -90,7 +92,7 @@ export default async function InsightsPage() {
     return true
   })
 
-  const final = deduped.slice(0, 6)
+  const final = deduped.slice(0, 8)
   const insights = final.length > 0 ? final : FALLBACK_INSIGHTS
   const hasLiveData = news.length > 0 || curated.length > 0
 

@@ -91,7 +91,7 @@ The two-platform structure is the architectural backbone of the entire site.
 ## 4. APPROVED NAVIGATION STRUCTURE
 
 ```
-Home · Solutions · About · Case Studies · Contact
+Home · About · Insights · Solutions · Case Studies · Contact
 ```
 
 - Navigation is a **glass pill** (fixed, centered, floating above content)
@@ -113,7 +113,7 @@ Home · Solutions · About · Case Studies · Contact
 | `/solutions/assan` | ASSAN platform detail page |
 | `/case-studies` | Case study index with filter tabs |
 | `/case-studies/[slug]` | Individual operation detail pages |
-| `/insights` | Research & Insights (operational intelligence) |
+| `/insights` | Research & Insights (operational intelligence) — live news + curated articles |
 | `/contact` | Contact form and founder editorial |
 | `/legal/terms` | Terms of Service |
 | `/legal/privacy` | Privacy Policy |
@@ -121,15 +121,16 @@ Home · Solutions · About · Case Studies · Contact
 ### Home Page Section Order
 
 1. **Hero** — Full-viewport, `landingpage.png` background, animated entry
-2. **CostOfComplexity** — "WHY SYSTEMS MATTER" — 4 data cards on cream background
-3. **PlatformArchitecture** — "PLATFORM ARCHITECTURE" — IRIS + ASSAN cards
-4. **DeploymentDomains** — Tab-switching panel, 5-second auto-advance
-5. **Doctrine** — "THE METHOD" — 6-step doctrine glass cards
-6. **ProofOfSystem** — "CODED WORK" — 4 operation navy cards
-7. **FounderBlock** — Founder editorial on cream background
-8. **Statistics** — "SYSTEMS IN PRACTICE" — 6 system-outcome metrics on `work-measured.webp` background
-9. **Insights** — "OPERATIONAL INTELLIGENCE" — 3 research insight cards
-10. **CTABand** — "The system starts with a conversation." — CTA section
+2. **NewsTickerSection** — "INTELLIGENCE FEED" — Industry signals card carousel on navy-deep background
+3. **CostOfComplexity** — "WHY SYSTEMS MATTER" — 4 data cards on cream background
+4. **PlatformArchitecture** — "PLATFORM ARCHITECTURE" — IRIS + ASSAN cards
+5. **DeploymentDomains** — Tab-switching panel, 5-second auto-advance
+6. **Doctrine** — "THE METHOD" — 6-step doctrine glass cards
+7. **ProofOfSystem** — "CODED WORK" — 4 operation navy cards
+8. **FounderBlock** — Founder editorial on cream background
+9. **Statistics** — "SYSTEMS IN PRACTICE" — 6 system-outcome metrics on `work-measured.webp` background
+10. **Insights** — "OPERATIONAL INTELLIGENCE" — 3 research insight cards
+11. **CTABand** — "The system starts with a conversation." — CTA section
 
 ---
 
@@ -166,9 +167,12 @@ The design system is locked from the live site. Every element below is intention
 | Display / Headlines | **Outfit** | 400–800 | Letter-spacing −0.03 to −0.04em |
 | Body / UI | **Inter** | 300–600 | Line-height 1.6–1.8 |
 
+**This applies consistently across the entire website including the admin dashboard.** Outfit for display headlines, Inter for body and interface text. No exceptions.
+
 **Loaded via:** `next/font/google` in `layout.tsx` (preload: true)  
 **CSS variables:** `--font-outfit`, `--font-inter`  
-**Tailwind classes:** `font-display` (Outfit), `font-body` (Inter)
+**Tailwind classes:** `font-display` (Outfit), `font-body` (Inter)  
+**Tailwind config:** `fontFamily.display` maps to `var(--font-outfit)`, `fontFamily.body` maps to `var(--font-inter)`
 
 **Scale:**
 - H1: `clamp(3rem, 7.5vw, 7.5rem)` · Outfit 800wt
@@ -178,7 +182,7 @@ The design system is locked from the live site. Every element below is intention
 
 > **⚠️ PROHIBITED FONTS:** Satoshi, Cormorant Garamond, DM Sans, Roboto, Arial, Space Grotesk, any system font substitutes. Do not introduce new fonts or deviate from Outfit + Inter casually.
 
-> **Typography consistency is critical.** Never apply `fontStyle: italic` or deviate from the font hierarchy without explicit approval. Every supporting line, tagline, and label must use `font-body` or `font-display` className.
+> **Typography consistency is critical.** Never apply `fontStyle: italic` or deviate from the font hierarchy without explicit approval. Every supporting line, tagline, and label must use `font-body` or `font-display` className. This rule applies to the public site AND the admin dashboard.
 
 ---
 
@@ -392,15 +396,25 @@ Phase 2 is complete. It added the operational backbone: private admin control la
 ### Auth Architecture
 - `middleware.ts` (project root): Intercepts all `/admin/*` routes, refreshes Supabase session, redirects unauthenticated requests to `/admin/login`
 - `src/lib/auth/utils.ts`: `isAuthorizedAdmin(supabase)` validates `user.user_metadata.user_name === 'jas21j'`
-- Server Components in admin routes call `isAuthorizedAdmin` as a second auth layer (defense in depth)
+- `src/app/admin/(protected)/layout.tsx`: Validates `isAuthorizedAdmin` as a layout-level guard — all protected routes share this auth check
+- `src/app/admin/login/page.tsx`: Client-side OAuth via `@supabase/ssr` browser client — handles redirect to GitHub, error states, and loading feedback
+- `src/components/LayoutWrapper.tsx`: Client component wrapping root layout — conditionally hides public Navigation + Footer on `/admin` routes
 - Admin login/unauthorized pages bypass middleware to avoid redirect loops
 
+### Auth Flow (Corrected March 2026)
+1. User visits `/admin` → middleware checks session → no session → redirects to `/admin/login`
+2. Login page is a client component — calls `signInWithOAuth({ provider: 'github' })` → redirects browser to GitHub
+3. GitHub OAuth returns to `/api/auth/callback` → exchanges code for session → validates username → redirects to `/admin`
+4. `(protected)/layout.tsx` runs `isAuthorizedAdmin` → authorized → renders dashboard shell
+5. Logout: AdminTopBar calls `supabase.auth.signOut()` → redirects to `/admin/login`
+
 ### Admin UI Style
-The admin is a separate visual shell — dark utility design, never using the public design system:
+The admin is a separate visual shell — dark utility design:
 - Background: `#0F1422` (outer), `#1A1A2E` (panels/modals)
 - Accent: `#C9A96E` (gold — consistent with brand)
-- Font: Inter only (no Outfit)
-- No Navigation.tsx, no Footer.tsx, no section animations
+- Typography: Outfit for headings, Inter for body/interface (consistent with public site)
+- No public Navigation.tsx, no Footer.tsx (hidden via LayoutWrapper)
+- No section animations
 
 ---
 
@@ -536,10 +550,14 @@ Set all of the above as Vercel Environment Variables. `NEXT_PUBLIC_SITE_URL` mus
 
 ---
 
-## 21. NEW FILE PATHS (Phase 2)
+## 21. NEW FILE PATHS (Phase 2 + Optimization Pass)
 
 ```
 middleware.ts                          # Route protection (project root)
+netlify.toml                           # Netlify build config (publish: .next)
+
+src/components/
+  LayoutWrapper.tsx                    # Conditionally hides Nav/Footer on /admin routes
 
 src/lib/
   supabase/
@@ -627,3 +645,41 @@ The following steps require user action in external dashboards. They cannot be a
 6. **GitHub OAuth App** — GitHub → Settings → Developer Settings → OAuth Apps → Salesman Solutions → add both callback URLs above.
 
 7. **Vercel env vars** — Add all variables listed in Section 20 to Vercel project settings before deploying.
+
+---
+
+## 23. PHASE 2 OPTIMIZATION PASS (March 2026)
+
+This optimization pass stabilized the admin auth flow, upgraded the Insights system, enforced typography consistency, fixed mobile viewport behavior, and added Netlify deployment support. No redesign — refinement only.
+
+### What Changed
+
+| Area | Change |
+|---|---|
+| Admin auth flow | Converted login to client-side OAuth with error handling; added layout-level auth guard in `(protected)/layout.tsx`; eliminated silent failures |
+| LayoutWrapper | New `src/components/LayoutWrapper.tsx` — hides public Navigation/Footer on admin routes via `usePathname()` |
+| Navigation | Updated to: Home > About > Insights > Solutions > Case Studies > Contact |
+| Homepage news section | Replaced simple ticker strip with full card-based Intelligence Feed section on navy-deep background with article images, gold accents, and auto-rotating carousel |
+| /insights page | Fixed unauthorized italic usage; typography aligned with design system |
+| Typography | Unified Outfit (headlines) + Inter (body) across entire site including admin; fixed Tailwind font config to use CSS variables; removed italic from insights source citations |
+| Mobile hero | Fixed white space issue using `100dvh` with `100vh` fallback; tightened mobile padding for full-screen immersion |
+| Netlify | Added `netlify.toml` with `publish = ".next"` to resolve build error |
+| Admin sub-pages | Simplified auth — layout handles authorization, individual pages focus on data fetching |
+
+### Netlify Deployment Settings
+
+```
+Base directory:    (empty — repo root)
+Build command:     npm run build
+Publish directory: .next
+```
+
+All environment variables from Section 20 must be set in Netlify's environment variables panel. `NEXT_PUBLIC_SITE_URL` must be the production domain.
+
+### Key Constraints Added
+
+- **LayoutWrapper pattern is required** — root `layout.tsx` uses `LayoutWrapper` to conditionally render Nav/Footer. Admin routes never see public chrome.
+- **Admin auth is layout-guarded** — `(protected)/layout.tsx` validates `isAuthorizedAdmin` before rendering any admin content. Individual page auth checks are no longer required but harmless.
+- **Typography is unified** — Outfit for all display/headlines, Inter for all body/UI, across public site and admin. No `fontStyle: italic` without approval.
+- **No `#000` or black** — all dark text uses navy (`#2B3A67`), charcoal (`#1A1A2E`), or white with opacity. Never pure black.
+- **Hero uses `100dvh`** — critical for mobile. Do not revert to `100vh` only.

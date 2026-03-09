@@ -15,7 +15,7 @@ export async function isAuthorizedAdmin(supabase: SupabaseClient): Promise<boole
   if (error || !user) return false
 
   const githubUsername: string | undefined = user.user_metadata?.user_name
-  return githubUsername === ALLOWED_USERNAME
+  return !!githubUsername && githubUsername.toLowerCase() === ALLOWED_USERNAME.toLowerCase()
 }
 
 /**

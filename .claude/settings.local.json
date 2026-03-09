@@ -6,7 +6,8 @@
       "Bash(dir \"C:\\\\Users\\\\MSI GAMING\\\\Documents\\\\Salesman\\\\digital assets\" /s /b)",
       "Bash(npm install @supabase/supabase-js @supabase/ssr)",
       "Bash(npx supabase --version)",
-      "Bash(node scripts/setup-db.mjs)"
+      "Bash(node scripts/setup-db.mjs)",
+      "mcp__mcp-registry__search_mcp_registry"
     ]
   }
 }

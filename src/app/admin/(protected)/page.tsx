@@ -1,16 +1,8 @@
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
 import { createServiceClient } from '@/lib/supabase/server'
-import { isAuthorizedAdmin } from '@/lib/auth/utils'
 import { adminFetchStatusCounts, adminFetchLogs } from '@/lib/db/queries'
 
 export default async function AdminDashboard() {
-  const supabase = await createClient()
-  const authorized = await isAuthorizedAdmin(supabase)
-  if (!authorized) redirect('/admin/unauthorized')
-
-  // Use service client for admin queries
   const serviceClient = createServiceClient()
   const [counts, recentLogs] = await Promise.all([
     adminFetchStatusCounts(serviceClient).catch(() => null),

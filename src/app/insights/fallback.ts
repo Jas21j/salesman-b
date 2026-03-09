@@ -12,6 +12,7 @@ export type InsightItem = {
   platform: string
   url?: string
   isExternal?: boolean
+  image?: string
 }
 
 export const FALLBACK_INSIGHTS: InsightItem[] = [

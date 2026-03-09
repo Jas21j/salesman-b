@@ -1,5 +1,8 @@
-import AdminSidebar from './components/AdminSidebar'
-import AdminTopBar from './components/AdminTopBar'
+import { redirect } from 'next/navigation'
+import { createClient } from '@/lib/supabase/server'
+import { isAuthorizedAdmin } from '@/lib/auth/utils'
+import AdminSidebar from '../components/AdminSidebar'
+import AdminTopBar from '../components/AdminTopBar'
 
 export const metadata = {
   title: 'Admin — Salesman Solutions',
@@ -11,6 +14,13 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
+  const supabase = await createClient()
+  const authorized = await isAuthorizedAdmin(supabase)
+
+  if (!authorized) {
+    redirect('/admin/login')
+  }
+
   return (
     <div
       style={{

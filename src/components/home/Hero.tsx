@@ -43,9 +43,9 @@ export default function Hero() {
 
   return (
     <section
+      className="hero-viewport"
       style={{
         position: 'relative',
-        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
