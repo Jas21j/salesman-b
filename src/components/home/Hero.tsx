@@ -103,8 +103,10 @@ export default function Hero() {
               animate={{ opacity: 0.06 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-              className="font-display font-bold select-none"
+              className="select-none"
               style={{
+                fontFamily: 'var(--font-cormorant, "Cormorant Garamond", serif)',
+                fontWeight: 700,
                 fontSize: 'clamp(80px, 15vw, 200px)',
                 letterSpacing: '-0.04em',
                 color: '#fff',
@@ -151,25 +153,27 @@ export default function Hero() {
           style={{ marginBottom: '8px' }}
         >
           <span
-            className="font-display block"
+            className="block"
             style={{
-              fontWeight: 800,
+              fontFamily: 'var(--font-cormorant, "Cormorant Garamond", serif)',
+              fontWeight: 700,
               color: '#fff',
-              letterSpacing: '-0.04em',
-              lineHeight: 0.95,
-              fontSize: 'clamp(3rem, 7.5vw, 7.5rem)',
+              letterSpacing: '-0.01em',
+              lineHeight: 0.92,
+              fontSize: 'clamp(3.2rem, 8vw, 8.5rem)',
             }}
           >
             SYSTEMS THAT
           </span>
           <span
-            className="font-display block text-outline"
+            className="block text-outline"
             style={{
-              fontWeight: 800,
-              letterSpacing: '-0.04em',
-              lineHeight: 0.95,
-              fontSize: 'clamp(3rem, 7.5vw, 7.5rem)',
-              marginTop: '-4px',
+              fontFamily: 'var(--font-cormorant, "Cormorant Garamond", serif)',
+              fontWeight: 700,
+              letterSpacing: '-0.01em',
+              lineHeight: 0.92,
+              fontSize: 'clamp(3.2rem, 8vw, 8.5rem)',
+              marginTop: '-2px',
             }}
           >
             IMPROVE INDUSTRIES
